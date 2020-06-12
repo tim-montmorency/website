@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Metas -->
+  {% render '@partial-meta' with _target.context.meta %}
+
+  <!-- Title -->
+  <title>{{ _target.title }}</title>
+
+  <!-- Icons -->
+  {% render '@partial-favicon' %}
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ '/assets/styles/main.css?ver=20200420T134250Z'|path }}">
+
+  <!-- JS -->
+  {% if _target.context.gtm %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ _target.context.gtm }}"></script>
+  {% endif %}
+</head>
+<body>
+  <div id="app">
+    {{ yield|raw }}
+  </div>
+
+  <!-- JS -->
+  {% if _target.context.gtm %}
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ _target.context.gtm }}');
+    </script>
+  {% endif %}
+  <script src="{{ '/assets/scripts/tim.js?ver=20200420T134250Z'|path }}"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+/**
+ * Positions
+ * =========
+ * |– center
+ */
+
+@mixin center($position: 'both') {
+  position: absolute;
+
+  @if not index('both' 'horizontal' 'vertical', $position) {
+    @error 'Position must be `both`, `horizontal` or `vertical`.';
+  }
+
+  @if $position == 'both' {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $position == 'horizontal' {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $position == 'vertical' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,12 @@
+{% extends '@organism-section' %}
+{% block body %}
+  <div class="card-list{% for modifier in modifiers %} card-list--{{ modifier }}{% endfor %}">
+    <div class="card-list__row row">
+      {% for item in items %}
+        <div class="card-list__col col-12 col-sm-6 col-lg-4 col-xl-3">
+          {% render '@molecule-card' with item %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

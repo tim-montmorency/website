@@ -1,0 +1,17 @@
+/**
+ * Typography
+ * ==========
+ * |– ellipsis
+ * |– uppercase
+ */
+
+%ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%uppercase {
+  letter-spacing: 0.05em; // horizontal rhythm (5 to 10% recommended)
+  text-transform: uppercase;
+}

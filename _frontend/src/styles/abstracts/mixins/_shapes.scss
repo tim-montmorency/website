@@ -1,0 +1,155 @@
+/**
+ * Shapes
+ * ======
+ * |– angle
+ * |– ratio
+ * |– triangle (wip)
+ */
+
+@mixin angle($direction, $width, $height, $thickness, $color: currentColor) {
+  @if not index('up' 'right' 'down' 'left', $direction) {
+    @error 'Direction must be `up`, `right`, `down` or `left`.';
+  } @else if not is-length($width) {
+    @error '`#{$width}` is not a valid length.';
+  } @else if not is-length($height) {
+    @error '`#{$height}` is not a valid length.';
+  } @else if unit($width) != unit($height) {
+    @error '`#{$width}` and #{$height} does not share the same unit.';
+  } @else if not is-length($thickness) {
+    @error '`#{$thickness}` is not a valid length.';
+  } @else if not is-color($color) {
+    @error '`#{$color}` is not a valid color.';
+  }
+
+  $unit: unit($width);
+  $unitless-height: $height / ($height * 0 + 1);
+  $unitless-width: $width / ($width * 0 + 1);
+
+  display: inline-block;
+  height: $height;
+  position: relative;
+  transition: transform $duration;
+  vertical-align: middle;
+  width: $width;
+
+  &::before,
+  &::after {
+    background-color: $color;
+    content: '';
+    display: block;
+    height: $thickness;
+    position: absolute;
+
+    @if $direction == 'up' or $direction == 'down' {
+      width: #{sqrt(pow($unitless-width/2, 2) + pow($unitless-height, 2), 2) + $unit};
+    } @else if $direction == 'right' or $direction == 'left' {
+      width: #{sqrt(pow($unitless-width, 2) + pow($unitless-height/2, 2), 2) + $unit};
+    }
+  }
+
+  &::before {
+    @if $direction == 'up' {
+      left: 25%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(atan($unitless-height/($unitless-width/2)) * 180/$pi * -1deg);
+    } @else if $direction == 'right' {
+      left: 50%;
+      top: 25%;
+      transform: translate(-50%, -50%) rotate(atan(($unitless-height/2)/$unitless-width) * -180/$pi * -1deg);
+    } @else if $direction == 'down' {
+      left: 25%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(atan($unitless-height/($unitless-width/2)) * 180/$pi * 1deg);
+    } @else if $direction == 'left' {
+      left: 50%;
+      top: 25%;
+      transform: translate(-50%, -50%) rotate(atan(($unitless-height/2)/$unitless-width) * 180/$pi * -1deg);
+    }
+  }
+
+  &::after {
+    @if $direction == 'up' {
+      left: 75%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(atan($unitless-height/($unitless-width/2)) * 180/$pi * 1deg);
+    } @else if $direction == 'right' {
+      left: 50%;
+      top: 75%;
+      transform: translate(-50%, -50%) rotate(atan(($unitless-height/2)/$unitless-width) * 180/$pi * -1deg);
+    } @else if $direction == 'down' {
+      left: 75%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(atan($unitless-height/($unitless-width/2)) * 180/$pi * -1deg);
+    } @else if $direction == 'left' {
+      left: 50%;
+      top: 75%;
+      transform: translate(-50%, -50%) rotate(atan(($unitless-height/2)/$unitless-width) * 180/$pi * 1deg);
+    }
+  }
+}
+
+@mixin ratio($x, $y) {
+  @if not is-integer($x) {
+    @error '`#{$x}` is not a valid integer.';
+  } @else if not is-integer($y) {
+    @error '`#{$y}` is not a valid integer.';
+  }
+
+  height: 0;
+  margin: auto;
+  overflow: hidden;
+  padding-bottom: $y / $x * 100%;
+  position: relative;
+  width: 100%;
+
+  > * {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@mixin triangle($direction, $width, $height, $color: currentColor) {
+  @if not index('up' 'up-right' 'right' 'down-right' 'down' 'down-left' 'left' 'up-left', $direction) {
+    @error 'Direction must be `up`, `up-right`, `right`, `down-right`, `down`, `down-left`, `left` or `up-left`.';
+  } @else if not is-length($width) {
+    @error '`#{$width}` is not a valid length.';
+  } @else if not is-length($height) {
+    @error '`#{$height}` is not a valid length.';
+  } @else if not is-color($color) {
+    @error '`#{$color}` is not a valid color.';
+  }
+
+  border-style: solid;
+  height: 0;
+  width: 0;
+
+  // TODO: up-right, down-right, down-left, up-left
+  @if $direction == 'up' {
+    border-color: transparent transparent $color;
+    border-width: 0 ($width / 2) $height;
+  } @else if $direction == 'up-right' {
+    border-color: transparent $color transparent transparent;
+    border-width: 0 $width $width 0;
+  } @else if $direction == 'right' {
+    border-color: transparent transparent transparent $color;
+    border-width: ($height / 2) 0 ($height / 2) $width;
+  } @else if $direction == 'down-right' {
+    border-color: transparent transparent $color;
+    border-width: 0 0 $width $width;
+  } @else if $direction == 'down' {
+    border-color: $color transparent transparent;
+    border-width: $height ($width / 2) 0;
+  } @else if $direction == 'down-left' {
+    border-color: transparent transparent transparent $color;
+    border-width: $width 0 0 $width;
+  } @else if $direction == 'left' {
+    border-color: transparent $color transparent transparent;
+    border-width: ($height / 2) $width ($height / 2) 0;
+  } @else if $direction == 'up-left' {
+    border-color: $color transparent transparent;
+    border-width: $width $width 0 0;
+  }
+}

@@ -1,0 +1,18 @@
+{% if href %}
+  <a
+    class="button{% for modifier in modifiers %} button--{{ modifier }}{% endfor %}"
+    href="{{ href }}"
+    target="{{ target|default('_self') }}"
+    {% if target == '_blank' %} rel="noopener"{% endif %}
+  >
+    {{ text }}
+  </a>
+{% else %}
+  <button
+    class="button{% for modifier in modifiers %} button--{{ modifier }}{% endfor %}"
+    type="{{ type|default('button') }}"
+    {% if disabled %} disabled{% endif %}
+  >
+    {{ text }}
+  </button>
+{% endif %}

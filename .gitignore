@@ -1,0 +1,55 @@
+# ===
+# Statamic default
+# ===
+.env
+node_modules/
+bower_components/
+local/cache/*
+local/storage/*
+local/temp/*
+installer.php
+
+# ===
+# Frontend Structure
+# ===
+**/assets/scripts/
+**/assets/styles/
+**/styleguide/
+
+# ===
+# Operating Systems
+# ===
+
+## macOS ##
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+## Windows ##
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# ===
+# IDEs & Code Editors
+# ===
+
+# JetBrains IDEs
+.idea/
+
+# Sublime Text
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/

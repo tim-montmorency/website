@@ -1,0 +1,11 @@
+<div class="page">
+  {% render '@organism-site-header' %}
+  <main class="site-main">
+    {% render '@organism-hero' %}
+    {% render '@organism-hero' with hero %}
+    {% render '@organism-hero' with hero only %}
+    {% render '@organism-hero' with { title: 'Home page Hero Title (inline)' } %}
+    {% render '@organism-card-list' %}
+  </main>
+  {% render '@organism-site-footer' %}
+</div>

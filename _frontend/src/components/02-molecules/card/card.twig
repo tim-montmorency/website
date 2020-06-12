@@ -1,0 +1,30 @@
+<article class="card">
+  {% if image %}
+    <div class="card__header">
+      <picture class="card__picture">
+        {# 1:1 - 218x218 #}
+        <source media="(min-width: 1200px)" srcset="{{ image.sources.xl }}">
+        {# 1:1 - 227x227 #}
+        <source media="(min-width: 992px)" srcset="{{ image.sources.lg }}">
+        {# 1:1 - 351x351 #}
+        <source media="(min-width: 576px)" srcset="{{ image.sources.sm }}">
+        {# 1:1 - 415x415 #}
+        <img class="card__image" src="{{ image.sources.xs }}" alt="{{ image.alt }}">
+      </picture>
+    </div>
+  {% endif %}
+  <div class="card__body">
+    <div class="card__title">{{ title }}</div>
+    {% if subtitle %}
+      <div class="card__subtitle">{{ subtitle }}</div>
+    {% endif %}
+    {% if description %}
+      <div class="card__description">{{ description }}</div>
+    {% endif %}
+  </div>
+  <footer class="card__footer">
+    <div class="card__actions">
+      {% render '@atom-button--internal' with link %}
+    </div>
+  </footer>
+</article>

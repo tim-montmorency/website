@@ -1,0 +1,122 @@
+/**
+ * Math
+ * ====
+ * |– abs (absolute)
+ * |– acos (arccos)
+ * |– asin (arcsin)
+ * |– atan (arctan)
+ * |– cos
+ * |– pow (power)
+ * |– sin
+ * |– sqrt (square)
+ * |– tan
+ * |– unitless-rad
+ */
+
+@function abs($number) {
+  @if $number >= 0 {
+    @return $number;
+  }
+
+  @return -1*$number;
+}
+
+@function acos ($x) {
+  @if $x > 1 or $x < -1 {
+    @warn 'Argument for `acos()` must be a number between -1 and 1';
+
+    @return null;
+  }
+
+  @return $pi / 2 - asin($x);
+}
+
+@function asin ($x) {
+  @if $x > 1 or $x < -1 {
+    @warn 'Argument for `asin()` must be a number between -1 and 1';
+
+    @return null;
+  }
+
+  @return atan($x / sqrt(1 - $x * $x));
+}
+
+@function atan ($x) {
+  $i: 24;
+  $sgn: 0;
+  $a: 0;
+
+  @if $x > 1 {
+    $sgn: 1;
+    $x: 1 / $x;
+  } @else if $x < -1 {
+    $sgn: -1;
+    $x: 1 / $x;
+  }
+
+  @while $i > 0 {
+    $a: ($i * $i * $x * $x) / (2 * $i + 1 + $a);
+    $i: $i - 1;
+  }
+
+  @if $sgn > 0 {
+    @return $pi / 2 - $x / (1 + $a);
+  } @else if $sgn < 0 {
+    @return -$pi / 2 - $x / (1 + $a);
+  } @else {
+    @return $x / (1 + $a);
+  }
+}
+
+@function cos ($x) {
+  $x: unitless-rad($x) % ($pi * 2);
+  $ret: 1;
+  $i: 1;
+
+  @for $n from 1 to 24 {
+    $i: $i * -1 * $x * $x / (2 * $n) / (2 * $n - 1);
+    $ret: $ret + $i;
+  }
+
+  @return $ret;
+}
+
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number; // Multiply by $number if exponent less than zero
+    }
+  } @else if $exponent < 0 {
+    @for $i from 1 through -$exponent {
+      $value: $value / $number; // Divide by $number if exponent less than zero
+    }
+  }
+
+  @return $value;
+}
+
+@function sin ($x) {
+  $x: unitless-rad($x);
+
+  @return cos($x - $pi / 2);
+}
+
+@function sqrt($square, $tolerance: 0.1, $estimate: $square/2) {
+  @if abs($square - $estimate*$estimate) < $tolerance {
+    @return $estimate;
+  }
+
+  @return sqrt($square, $tolerance, ($estimate + $square/$estimate)/2);
+}
+
+@function tan ($x) {
+  $x: unitless-rad($x);
+
+  @return sin($x) / cos($x);
+}
+
+@function unitless-rad ($angle) {
+  @return (0rad + $angle) / 1rad;
+}

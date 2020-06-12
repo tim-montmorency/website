@@ -1,0 +1,9 @@
+/**
+ * Colors
+ * ======
+ * |– palette
+ */
+
+@function palette($color, $tone: base) {
+  @return map-get(map-get($colors, $color), $tone);
+}
