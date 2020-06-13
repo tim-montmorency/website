@@ -12,8 +12,8 @@ installer.php
 # ===
 # Frontend Structure
 # ===
-**/assets/scripts/
-**/assets/styles/
+**/themes/**/css/
+**/themes/**/js/
 **/styleguide/
 
 # ===
