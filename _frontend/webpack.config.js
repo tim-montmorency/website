@@ -4,6 +4,8 @@
  */
 
 const chalk = require('chalk');
+const glob = require('glob');
+const globImporter = require('node-sass-glob-importer');
 const log = require('fancy-log');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
@@ -42,6 +44,26 @@ module.exports = (env, options) => {
           test: /\.js$/,
           exclude: /node_modules/,
           loader: 'babel-loader', // config file can be found at _frontend/.babelrc.js
+        },
+        {
+          test: /\.scss$/,
+          exclude: /node_modules/,
+          use: [
+            'vue-style-loader',
+            {
+              loader: MiniCssExtractPlugin.loader,
+            },
+            'css-loader',
+            'postcss-loader', // config file can be found at _frontend/.postcssrc.js
+            {
+              loader: 'sass-loader',
+              options: {
+                sassOptions: {
+                  importer: globImporter(),
+                },
+              },
+            },
+          ],
         },
         {
           enforce: 'pre',

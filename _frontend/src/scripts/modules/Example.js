@@ -15,6 +15,6 @@ export default class {
   }
 
   bindEvents() {
-    console.log('work');
+    console.log('Yeahhhh');
   }
 }

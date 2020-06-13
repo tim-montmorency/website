@@ -38,14 +38,8 @@ const paths = {
 };
 
 const syncOptions = {
-  // Enable HTTPS mode with custom certificates.
-  https: {
-    cert: 'certs/sidlee.test.crt',
-    key: 'certs/sidlee.test.key',
-  },
-
   // Specify a hostname to use
-  host: 'fractal.sidlee.test',
+  host: 'fractal.tim.test',
 
   // Stop the browser from automatically opening
   open: false,
@@ -63,8 +57,8 @@ const theme = mandelbrot({
 });
 
 // Project-related metadata
-fractal.set('project.author', 'Sid Lee');
-fractal.set('project.title', 'Sid Lee');
+fractal.set('project.author', 'TIM');
+fractal.set('project.title', 'TIM');
 fractal.set('project.version', 'v1.0');
 
 // Components global configuration
