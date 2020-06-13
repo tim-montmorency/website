@@ -30,6 +30,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'class-methods-use-this': 'off', // Vanilla JS
     'max-len': ['error', { code: 120, ignoreUrls: true, tabWidth: 2 }],
     'no-console': 'off',
     'no-param-reassign': ['error', {
