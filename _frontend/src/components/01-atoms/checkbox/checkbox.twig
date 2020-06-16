@@ -1,0 +1,16 @@
+{% set block = 'checkbox' %}
+
+<label {% if id %} for="{{ id }}"{% endif %} class="{{ block }} {%- for modifier in modifiers %} {{ block }}--{{ modifier }}{% endfor %}">
+  <input type="checkbox" class="{{ block }}__input"
+    {%- if id %} id="{{ id }}"{% endif %} 
+    {%- if checked %} checked{% endif %}
+    {%- if disabled %} disabled{% endif %} />
+  <span class="{{ block }}__box">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="{{ block }}__checkmark">
+      <path stroke-width="2" d="M.757 7.058l7.615 8.81L16.865.483"/>
+    </svg>
+  </span>
+  {% if text -%}
+  <span class="{{ block }}__text">{{ text|raw }}</span>
+  {% endif -%}
+</label>

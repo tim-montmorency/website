@@ -1,0 +1,14 @@
+.title {
+  &__anchor {
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 100;
+    text-decoration: none;
+    visibility: hidden;
+  }
+
+  &:hover &,
+  &:focus & {
+    &__anchor { visibility: visible; }
+  }
+}

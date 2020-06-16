@@ -1,3 +1,69 @@
-button {
-  //@extend %button-reset;
+.btn {
+  @extend %button-reset;
+
+  border-radius: 10px;
+  box-shadow: 0 3px 10px -5px currentColor;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color $duration, transform $duration, box-shadow $duration;
+  vertical-align: middle;
+
+  &__content {
+    display: block;
+    padding: 0.75em 1.25em;
+    position: relative;
+    z-index: 1;
+  }
+
+  svg {
+    fill: currentColor;
+    height: 1.5em;
+    margin: -0.15em 0 0 0.5em;
+    vertical-align: middle;
+    width: 1.5em;
+
+    &:only-child { margin-left: 0; }
+  }
+
+  &[target='_blank'] {
+    &::after { // Text warning about the link target
+      font-size: 0.1rem;
+      height: 1px;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 1px;
+    }
+  }
+
+  &:active {
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0);
+    transform: scale(0.95);
+  }
+
+  &--primary {
+    background-color: #000;
+    color: #fff;
+  }
+
+  &--secondary {
+    background-color: #fff;
+    color: #000;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  &--icon-only & {
+    &__content {
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+    }
+  }
 }

@@ -1,0 +1,5 @@
+{% set block = 'wysiwyg' %}
+
+<div class="{{ block }} {% for modifier in modifiers %}{{ block }}--{{ modifier }} {% endfor %}">
+  {{ text | raw }}
+</div>

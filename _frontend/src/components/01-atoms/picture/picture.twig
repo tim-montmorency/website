@@ -1,0 +1,29 @@
+{% set block = 'picture' %}
+
+{%- if src %}
+  {%- if src | isString %}
+    <img class="{{ block }}
+      {%- for modifier in modifiers %} {{ block }}--{{ modifier }}{% endfor %}" 
+      src="{{ src }}" 
+      alt="{{ alt }}"
+      {% if lazy is not defined or lazy == false %} loading="lazy"{% endif %}>
+  {% else -%}
+    <picture class="{{ block }}
+      {%- for modifier in modifiers %} {{ block }}--{{ modifier }}{% endfor %}">
+      {%- for item in src -%}
+        <source 
+          srcset="{{ item.src }}" 
+          {%- if condition | isNumber %}
+          media="(min-width: {{ item.condition }}px)"
+          {% else -%}
+          media="(orientation: {{ item.condition }})"
+          {% endif -%}>
+      {% endfor -%}
+      {%- set default = src | arrayLast -%}
+      <img 
+        src="{{ default.src }}" 
+        alt="{{ alt }}" 
+        {% if lazy is not defined or lazy == false %} loading="lazy"{% endif %}>
+    </picture>
+  {% endif -%}
+{% endif -%}

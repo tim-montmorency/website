@@ -1,0 +1,76 @@
+.toggle {
+  $el: &;
+  $size: 1.5em;
+
+  cursor: pointer;
+  display: inline-block;
+  height: $size;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: $size*2;
+
+  &__label { margin-right: 0.2em; }
+
+  &__rail {
+    display: inline-block;
+    height: $size;
+    position: relative;
+    vertical-align: middle;
+    width: $size*2;
+
+    &::before {
+      background-color: #000;
+      border-radius: $size/2;
+      box-shadow: 0 3px 10px -5px currentColor;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      opacity: 0.2;
+      position: absolute;
+      top: 0;
+      transition: background-color $duration ease-in-out, box-shadow $duration ease-in-out, opacity $duration ease-in-out;
+      width: 100%;
+    }
+
+    &::after {
+      background: #fff;
+      border: solid 1px #fff;
+      border-radius: $size;
+      content: '';
+      display: block;
+      height: $size;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: transform $duration ease-in-out, box-shadow $duration ease-in-out, background-color $duration;
+      width: $size;
+      z-index: 1;
+    }
+  }
+
+  &__checkbox {
+    left: -99999px;
+    position: absolute;
+
+    &:checked {
+      ~ #{$el}__rail {
+        &::before { opacity: 1; }
+        &::after { transform: translateX($size); }
+      }
+    }
+
+    &:disabled {
+      ~ #{$el}__rail {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+
+    &:focus {
+      ~ #{$el}__rail {
+        &::after { background-color: #000; }
+      }
+    }
+  }
+}

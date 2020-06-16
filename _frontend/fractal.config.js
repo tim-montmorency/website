@@ -34,7 +34,7 @@ const paths = {
   components: './src/components',
   dest: '../styleguide',
   docs: './docs',
-  staticAssets: '../assets',
+  staticAssets: '../site/themes/tim/',
 };
 
 const syncOptions = {

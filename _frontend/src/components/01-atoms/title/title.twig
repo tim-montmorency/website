@@ -1,0 +1,10 @@
+{% set block = 'title' %}
+
+{% if text %}
+<{{ tag|default('h2') }} class="{{ block }} {%- for modifier in modifiers %} {{ block }}--{{ modifier }}{% endfor %}">
+  {{ text }}
+  {%- if anchor %}
+  <a href="#{{ text | slugify }}" id="{{ text | slugify }}" aria-hidden="true" class="{{ block }}__anchor">🔗</a>
+  {% endif -%}
+</{{ tag|default('h2') }}>
+{% endif %}

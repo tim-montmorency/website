@@ -1,9 +1,0 @@
-/**
- * Typography
- * ==========
- * |– font
- */
-
-@function font($style: sans-serif) {
-  @return map-get($fonts, $style);
-}

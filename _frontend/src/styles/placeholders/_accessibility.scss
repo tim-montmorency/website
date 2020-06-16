@@ -1,0 +1,58 @@
+/**
+ * Accessibility
+ * =============
+ * |– sr-only
+ * |– sr-only-focusable
+ */
+
+%sr-only,
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+%sr-only-focusable,
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    clip: auto;
+    height: auto;
+    overflow: visible;
+    position: static;
+    white-space: normal;
+    width: auto;
+  }
+}
+
+%outline {
+  outline: none;
+
+  .keyboard-user & {
+    outline-color: var(--outline);
+    outline-offset: -8px;
+    outline-style: solid;
+    outline-width: 0;
+    transition: outline-offset $duration;
+
+    &:focus {
+      outline-offset: 0;
+      outline-width: 8px;
+    }
+  }
+}
+
+%outline-inside {
+  @extend %outline;
+
+  .keyboard-user & {
+    outline-offset: -16px;
+
+    &:focus { outline-offset: -8px; }
+  }
+}

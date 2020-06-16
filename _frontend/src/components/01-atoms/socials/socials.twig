@@ -1,0 +1,18 @@
+{% set block = 'socials' %}
+
+<div class="{{ block }}">
+  <ul class="{{ block }}__list">
+    {%- for item in items %}
+      {%- if item.svg %}
+      <li class="{{ block }}__item">
+        <a href="{{ item.url }}" class="{{ block }}__link" target="_blank">
+          {%- if item.name %}
+          <span class="sr-only">{{ item.name }}</span>
+          {% endif -%}
+          {{ item.svg | raw }}
+        </a>
+      </li>
+      {% endif -%}
+    {% endfor %}
+  </ul> 
+</div>

@@ -1,0 +1,11 @@
+{%- if src %} 
+{% set block = 'youtube' %}
+{% set defaultPoster = 'https://img.youtube.com/vi/' ~ src | ytKey ~ '/0.jpg' %}
+
+<a class="{{ block }}
+  {%- for modifier in modifiers %} {{ block }}--{{ modifier }}{%- endfor -%}"
+  data-module="Youtube"
+  href="{{ src }}"
+  style="background-image: url('{{ poster|default(defaultPoster) }}')"
+  tabindex="0"></a>
+{% endif %}

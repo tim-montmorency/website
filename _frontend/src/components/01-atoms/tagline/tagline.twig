@@ -1,0 +1,5 @@
+{% set block = 'tagline' %}
+
+{% if text %}
+<{{ tag|default('em') }} class="{{ block }} {%- for modifier in modifiers %} {{ block }}--{{ modifier }}{% endfor %}">{{ text }}</{{ tag|default('em') }}>
+{% endif %}

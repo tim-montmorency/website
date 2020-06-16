@@ -1,0 +1,32 @@
+.socials {
+  position: relative;
+
+  svg {
+    display: block;
+    fill: currentColor;
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  &__list {
+    @extend %list-reset;
+
+    display: inline-flex;
+  }
+
+  &__item {
+    display: block;
+    position: relative;
+  }
+
+  &__link {
+    display: block;
+    opacity: 1;
+    padding: 0.5em;
+    transition: opacity $duration;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

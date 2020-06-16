@@ -1,18 +1,39 @@
-{% if href %}
-  <a
-    class="button{% for modifier in modifiers %} button--{{ modifier }}{% endfor %}"
-    href="{{ href }}"
-    target="{{ target|default('_self') }}"
-    {% if target == '_blank' %} rel="noopener"{% endif %}
-  >
-    {{ text }}
-  </a>
-{% else %}
-  <button
-    class="button{% for modifier in modifiers %} button--{{ modifier }}{% endfor %}"
-    type="{{ type|default('button') }}"
-    {% if disabled %} disabled{% endif %}
-  >
-    {{ text }}
-  </button>
-{% endif %}
+{% set block = 'btn' %}
+{% set tag = href is defined and href is not null ? 'a' : 'button' %}
+
+{% if icon %}
+  {% if text is not defined %}
+    {% if modifiers is defined %}
+      {% set modifiers = modifiers|merge(['icon-only']) %}
+    {% else %}
+      {% set modifiers = ['icon-only'] %}
+    {% endif -%}
+  {% endif -%}
+{% endif -%}
+
+{%- if text or icon %}
+  <{{ tag }}
+    {% if href %} href="{{ href }}"{% endif -%}
+    {% if type %} type="{{ type }}"{% endif -%}
+    {% if href and target %} target="{{ target }}"{% endif -%}
+    class="{{ block }} {{ block }}--{{ style|default('primary') }}
+      {%- for modifier in modifiers %} {{ block }}--{{ modifier }}{% endfor %}
+      {% if ref %} {{ ref }}{% endif -%}
+      {% if disabled %} {{ block }}--disabled{% endif -%}
+      "
+    {% if disabled and tag == 'button' %} disabled{% endif -%}
+    {% if vClick %} @click="{{ vClick }}"{% endif -%}>
+    <span class="{{ block }}__content">
+      {% if text %}
+        <span class="{{ block }}__text">{{ text }}</span>
+      {% endif -%}
+      {% if icon %}
+        {{ icon }}
+      {% elseif href and target == '_blank' %}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19 19H5V5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.6l-9.8 9.8 1.4 1.4L19 6.4V10h2V3h-7z"/>
+        </svg>
+      {% endif -%}
+    </span>
+  </{{ tag }}>
+{% endif -%}

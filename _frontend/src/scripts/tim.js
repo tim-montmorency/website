@@ -2,10 +2,13 @@ import '../styles/tim.scss';
 import 'mdn-polyfills/CustomEvent';
 import 'mdn-polyfills/NodeList.prototype.forEach';
 import DetectKeyboardUser from 'detect-keyboard-user';
+import JSvh from './helpers/JSvh';
 import UserAgentParser from './helpers/UserAgentParser';
 
 /* eslint-disable global-require */
 new UserAgentParser().addClasses();
+/* eslint-disable-next-line */
+const vh = new JSvh();
 /* eslint-disable-next-line */
 const myDKU = new DetectKeyboardUser();
 

@@ -1,0 +1,163 @@
+/**
+ * Elements
+ * ========
+ * |– blockquote
+ * |– headings
+ * |– list (ol, ul)
+ * |– paragraph
+ */
+
+%blockquote {
+  @extend %remove-ends-vertical-margin;
+
+  margin: 0 0 $spacer;
+  text-indent: -0.35em; // hanging-punctuation
+
+  &::before {
+    content: '“';
+  }
+
+  &::after {
+    content: '”';
+  }
+
+  [lang='fr'] & {
+    &::before {
+      content: '«\00a0';
+    }
+
+    &::after {
+      content: '\00a0»';
+    }
+  }
+}
+
+%headings {
+  @extend %remove-ends-vertical-margin;
+
+  letter-spacing: -0.03em; // horizontal rhythm (-3 to -5% recommended)
+  margin: 0 0 $spacer;
+}
+
+%list {
+  @extend %remove-ends-vertical-margin;
+
+  list-style-position: outside; // hanging-punctuation
+  margin: 0 0 $spacer;
+  padding: 0;
+}
+
+%paragraph {
+  @extend %remove-ends-vertical-margin;
+
+  margin: 0 0 $spacer;
+  padding: 0;
+}
+
+%button-basic {
+  @extend %button-reset;
+
+  display: block;
+  height: 40px;
+  transform: scale(1);
+  transition: transform $duration ease;
+  width: 40px;
+  z-index: 5;
+
+  &::before,
+  &::after {
+    color: #fff;
+    content: '';
+    left: 50%;
+    position: absolute;
+  }
+
+  &::before {
+    border: solid 3px currentColor;
+    border-radius: 50%;
+    box-shadow: inset 0 0 17px rgba(0, 0, 0, 0.15), 0 0 5px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    opacity: 1;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform $duration, opacity $duration;
+    width: 100%;
+  }
+
+  &::after {
+    line-height: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+
+    &:hover,
+    &:focus {
+      &::before {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+}
+
+%button-close {
+  @extend %button-basic;
+
+  &::after {
+    content: '×';
+    font-size: 35px;
+    top: 42%;
+  }
+}
+
+%button-play {
+  @extend %button-basic;
+
+  &::after {
+    content: '▸';
+    font-size: 30px;
+    top: 47%;
+  }
+}
+
+%button-prev,
+%button-next {
+  @extend %button-basic;
+
+  &::after {
+    font-size: 25px;
+    top: 47%;
+  }
+}
+
+%button-prev {
+  &::after {
+    content: '←';
+  }
+}
+
+%button-next {
+  &::after {
+    content: '→';
+  }
+}
+
+%overlay {
+  background: rgba(0, 0, 0, 0.4);
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity $duration cubic-bezier(0, 0, 0.3, 1);
+  width: 100%;
+  will-change: opacity;
+}

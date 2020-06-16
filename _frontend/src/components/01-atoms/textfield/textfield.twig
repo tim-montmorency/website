@@ -1,0 +1,67 @@
+{% set block = 'textfield' %}
+
+{% if button %}
+  {% if modifiers is defined %}
+    {% set modifiers = modifiers|merge(['w-button']) %}
+  {% else %}
+    {% set modifiers = ['w-button'] %}
+  {% endif -%}
+{% endif -%}
+
+{# Pattern #}
+{% if pattern is not defined %}
+  {% if type == 'email' %}
+    {% set pattern = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$' %}
+  {% elseif type == 'tel' %}
+    {% set pattern = '^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$' %}
+  {% endif -%}
+{% endif %}
+
+{# Input mode aka display the best keyboard possible on mobile #}
+{% if inputmode is not defined %}
+  {% if type == 'email' %}
+    {% set inputmode = 'email' %}
+  {% elseif type == 'tel' %}
+    {% set inputmode = 'tel' %}
+  {% elseif type == 'url' %}
+    {% set inputmode = 'url' %}
+  {% elseif type == 'search' %}
+    {% set inputmode = 'search' %}
+  {% endif -%}
+{% endif %}
+
+{% if ariaLabel is not defined %}
+  {% if placeholder %}
+    {% set ariaLabel = placeholder %}
+  {% endif -%}
+{% endif %}
+
+<span class="{{ block }} {{ block }}--{{ style|default('primary') }}
+  {% if type %} {{ block }}--{{ type }}{% endif -%}
+  {%- for modifier in modifiers %} {{ block }}--{{ modifier }}{% endfor %}
+  {%- if required %} {{ block }}--required{% endif -%}
+  {%- if disabled %} {{ block }}--disabled{% endif -%}">
+  <input class="{{ block }}__input{%- if jsClass %} {{ jsClass }}{% endif -%}"
+    type="{{ type|default('text') }}"
+    {% if name %} name="{{ name }}"{% endif -%}
+    {% if pattern %} pattern="{{ pattern }}"{% endif -%}
+    {% if title %} title="{{ title }}"{% endif -%}
+    {% if ariaLabel %} aria-label="{{ ariaLabel }}"{% endif -%}
+    {% if placeholder %} placeholder="{{ placeholder }}"{% endif -%}
+    {% if value %} value="{{ value }}"{% endif -%}
+    {% if min %} min="{{ min }}"{% endif -%}
+    {% if max %} max="{{ max }}"{% endif -%}
+    {% if inputmode %} inputmode="{{ inputmode }}"{% endif -%}
+    {% if required %} required{% endif -%}
+    {% if disabled %} disabled{% endif -%}
+  >
+  
+  {%- if button %}
+  <button class="{{ block }}__button">
+    {%- if button.text %}
+    <span class="sr-only">{{ button.text }}</span>  
+    {% endif -%}
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.4 14.5"><path d="M19.2 0l-1.4 1.4 4.7 4.8H0v2h22.7l-4.9 4.9 1.4 1.4 7.2-7.2z"></path></svg>
+  </button>
+  {% endif -%}
+</span>

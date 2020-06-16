@@ -1,0 +1,52 @@
+.textfield {
+  display: inline-block;
+  position: relative;
+
+  svg { fill: currentColor; }
+
+  &__input {
+    appearance: none;
+    border-radius: 10px;
+    border-width: 0;
+    box-shadow: 0 3px 10px -5px currentColor;
+    color: inherit;
+    display: block;
+    padding: 15px;
+    transition: background-color $duration;
+    width: 100%;
+
+    &::placeholder { color: currentColor; }
+
+    &:invalid { box-shadow: 0 0 1px 1px #f00; }
+  }
+
+  &__button {
+    @extend %button-reset;
+
+    height: 100%;
+    padding: 0 0.75em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3em;
+  }
+
+  // Modifiers ---------
+  &--primary { color: #000; }
+
+  &--primary & {
+    &__input { background-color: #fff; }
+  }
+
+  &--secondary { color: #fff; }
+
+  &--secondary & {
+    &__input { background-color: #000; }
+  }
+
+  &--w-button & {
+    &__input {
+      padding-right: 54px; // Avoid text going under the button
+    }
+  }
+}

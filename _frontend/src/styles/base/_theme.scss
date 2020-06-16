@@ -1,8 +1,0 @@
-.theme {
-  @each $theme, $map in $themes {
-    &--#{$theme} {
-      background-color: map-get($map, primary);
-      color: map-get($map, secondary);
-    }
-  }
-}
