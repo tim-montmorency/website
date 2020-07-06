@@ -37,8 +37,9 @@
       &::before,
       &::after {
         content: '•';
-        font-size: 1.25em;
+        font-size: 1.5em;
         left: -1em;
+        line-height: 1;
         position: absolute;
         top: 0;
       }
