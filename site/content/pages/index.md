@@ -5,7 +5,7 @@ body:
     wysiwyg:
       -
         type: text
-        text: '<h2>La&nbsp;<strong>TIM</strong>, c''est un&nbsp;diplôme d''études collégiales&nbsp;<strong>(DEC)</strong>&nbsp;en&nbsp;<strong>techniques d''intégration multimédia</strong>&nbsp;(TIM).</h2><p>C''est une&nbsp;formation&nbsp;<strong>multidisciplinaire</strong>&nbsp;qui te fera développer tes compétences dans plein d''aspects des&nbsp;médias interactifs&nbsp;et te permettra de:</p><ul><li><strong>Découvrir tes passions&nbsp;</strong>&nbsp;à l''intérieur des médias interactifs: sites web, applications mobiles, micro-jeux, installations interactives, animation, vidéo, réalité virtuelle</li><li><strong>Trouver un emploi&nbsp;</strong>dans le domaine du web comme designer, intégrateur, développeur front-end ou back-end.</li><li><strong>Poursuivre vers l''université&nbsp;</strong>en création de jeux vidéos, design graphique, animation 3D ou médias interactifs.</li></ul>'
+        text: '<h2>La TIM, c''est un diplôme d''études collégiales (DEC) en techniques d''intégration multimédia (TIM).</h2><p>C''est une formation <strong>multidisciplinaire</strong> qui te fera développer tes compétences dans plein d''aspects des médias interactifs& et te permettra de:</p><ul><li><strong>Découvrir tes passions à l''intérieur des médias interactifs: sites web, applications mobiles, micro-jeux, installations interactives, animation, vidéo, réalité virtuelle</li><li><strong>Trouver un emploi&nbsp;</strong>dans le domaine du web comme designer, intégrateur, développeur front-end ou back-end.</li><li><strong>Poursuivre vers l''université&nbsp;</strong>en création de jeux vidéos, design graphique, animation 3D ou médias interactifs.</li></ul>'
       -
         type: faq
         faq:
