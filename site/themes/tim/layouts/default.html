@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Another awesome Statamic site">
-    <title>{{ title ensure_right=" / " }}{{ site_name }}</title>
+    <title>{{ title ensure_right=" - " }}{{ site_name }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:ital,wght@0,900;1,900&family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ theme:css }}">
 </head>
 
@@ -15,8 +16,8 @@
 
     {{ template_content }}
 
-    <footer class="page" data-module="Example">
-        <p class="copyright">&copy; {{ now format="Y" }} {{ author_name }}</p>
+    <footer class="main-footer">
+        <p class="copyright">&copy; {{ now format="Y" }}</p>
     </footer>
 
     <script src="{{ theme:js }}"></script>

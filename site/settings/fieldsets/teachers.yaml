@@ -1,0 +1,10 @@
+sections:
+  main:
+    display: Main
+    fields:
+      person:
+        fieldset: person
+        type: partial
+        display: Person
+taxonomies: true
+title: Teacher

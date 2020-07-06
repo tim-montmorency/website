@@ -1,0 +1,7 @@
+sections:
+  main:
+    display: Main
+    fields: {  }
+taxonomies: false
+hide: true
+title: 'Partial - Split'

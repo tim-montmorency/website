@@ -1,0 +1,24 @@
+sections:
+  main:
+    display: Main
+    fields:
+      firstname:
+        type: text
+        width: 33
+        display: 'First name'
+      lastname:
+        type: text
+        width: 33
+        display: 'Last name'
+      gender:
+        options:
+          male: 👨
+          female: 👩
+        inline: true
+        type: radio
+        width: 33
+        display: Gender
+        default: male
+taxonomies: false
+hide: true
+title: Person

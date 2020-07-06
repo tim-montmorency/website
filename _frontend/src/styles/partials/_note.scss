@@ -1,0 +1,43 @@
+.note {
+  display: block;
+  font-family: font(sans-serif);
+  font-size: 0.8889em;
+  margin: 1em $grid-gutter-width*-0.75;
+  padding: $grid-gutter-width*0.75;
+  position: relative;
+  width: calc(100% + #{$grid-gutter-width});
+
+  &__bg {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: skew(5deg);
+    width: 100%;
+
+    &::before {
+      background-color: var(--highlight);
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0.15;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    // content
+    position: relative;
+
+    > * {
+      @extend %remove-ends-vertical-margin;
+    }
+  }
+
+  code {
+    color: currentColor;
+  }
+}

@@ -1,0 +1,62 @@
+.quote {
+  $el: &;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $grid-gutter-width;
+  width: fit-content;
+
+  &__content {
+    font-family: font(secondary);
+    font-size: 2.4rem;
+    font-style: italic;
+    width: fit-content;
+
+    &::before,
+    &::after {
+      color: var(--highlight);
+    }
+
+    &::before {
+      content: '«';
+      margin-right: 0.25em;
+    }
+
+    &::after {
+      content: '»';
+      margin-left: 0.25em;
+    }
+  }
+
+  &__footer {
+    width: fit-content;
+  }
+
+  // Modifiers
+  &--left {
+    border-left: solid 3px var(--highlight);
+
+    #{$el}__content {
+      font-style: normal;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .quote {
+    // Modifiers
+    &--left {
+      float: left;
+      margin-right: $grid-gutter-width*-1;
+      max-width: 50%;
+      padding-right: $grid-gutter-width;
+      position: relative;
+      right: $grid-gutter-width;
+    }
+  }
+}

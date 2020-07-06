@@ -1,0 +1,39 @@
+sections:
+  main:
+    display: Main
+    fields:
+      faq:
+        sets:
+          item:
+            display: Item
+            fields:
+              question:
+                type: text
+                display: Question
+              answer:
+                buttons:
+                  - h2
+                  - h3
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - quote
+                  - anchor
+                style: sans
+                spellcheck: true
+                allow_source: true
+                allow_internal_links: true
+                link_noopener: true
+                link_noreferrer: true
+                target_blank: true
+                semantic_elements: true
+                restrict_assets: false
+                type: bard
+                display: Answer
+        type: replicator
+        display: FAQ
+taxonomies: false
+hide: true
+title: 'Partial - FAQ'

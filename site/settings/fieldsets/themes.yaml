@@ -1,0 +1,28 @@
+sections:
+  main:
+    display: Main
+    fields:
+      primary:
+        format: rgb
+        control: hue
+        show_opacity: true
+        type: colorpicker
+        width: 33
+        display: Primary
+      secondary:
+        format: rgb
+        control: hue
+        show_opacity: true
+        type: colorpicker
+        width: 33
+        display: Secondary
+      highlight:
+        format: rgb
+        control: hue
+        show_opacity: true
+        type: colorpicker
+        width: 33
+        display: Highlight
+taxonomies: false
+hide: true
+title: Themes

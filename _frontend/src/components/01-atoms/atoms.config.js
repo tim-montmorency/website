@@ -2,11 +2,11 @@ const sass = require('node-sass');
 const sassExtract = require('sass-extract');
 
 const rendered = sass.renderSync({
-  file: './src/scss/abstracts/__variables.scss',
+  file: './src/styles/abstracts/_variables.scss',
 });
 
 const variables = sassExtract.extractSync(rendered, {
-  file: './src/scss/abstracts/__variables.scss',
+  file: './src/styles/abstracts/_variables.scss',
 });
 
 module.exports = {

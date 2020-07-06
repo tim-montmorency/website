@@ -4,7 +4,6 @@
  */
 
 const chalk = require('chalk');
-const glob = require('glob');
 const globImporter = require('node-sass-glob-importer');
 const log = require('fancy-log');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

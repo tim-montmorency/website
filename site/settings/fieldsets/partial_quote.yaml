@@ -1,0 +1,17 @@
+sections:
+  main:
+    display: Main
+    fields:
+      text:
+        type: textarea
+        display: Text
+      person:
+        collection:
+          - students
+          - teachers
+        type: collection
+        width: 33
+        display: Person
+taxonomies: false
+hide: true
+title: 'Partial - Quote'

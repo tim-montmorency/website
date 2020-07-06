@@ -1,4 +1,6 @@
 .section {
+  // background-image: linear-gradient(0deg, var(--secondary) 1.43%, var(--primary) 1.43%, var(--primary) 50%, var(--secondary) 50%, var(--secondary) 51.43%, var(--primary) 51.43%, var(--primary) 100%);
+  background-size: 70px 70px;
   padding-bottom: $spacer*2;
   padding-top: $spacer*2;
 
@@ -13,9 +15,9 @@
 }
 
 // Large devices (desktops, 992px and up)
-@include media-breakpoint-up(lg) {
-  .section {
-    padding-bottom: $spacer*4;
-    padding-top: $spacer*4;
-  }
-}
+// @include media-breakpoint-up(lg) {
+//   .section {
+//     padding-bottom: $spacer*4;
+//     padding-top: $spacer*4;
+//   }
+// }

@@ -1,0 +1,94 @@
+sections:
+  main:
+    display: Main
+    fields:
+      theme:
+        type: color_swatches
+        display: Theme
+        colors:
+          normal: '#111111'
+          reversed: '#ffffff'
+          highlight: '#ff003a'
+        default: normal
+      wysiwyg:
+        buttons:
+          - h2
+          - h3
+          - bold
+          - italic
+          - unorderedlist
+          - orderedlist
+          - removeformat
+          - anchor
+          - code
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: true
+        link_noreferrer: true
+        target_blank: false
+        semantic_elements: true
+        container: main
+        folder: /
+        restrict_assets: true
+        sets:
+          note:
+            display: Note
+            fields:
+              category:
+                options:
+                  generic: Generic
+                  warning: Warning
+                type: select
+                display: Category
+                default: generic
+              text:
+                buttons:
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - anchor
+                  - code
+                style: sans
+                spellcheck: true
+                allow_source: true
+                allow_internal_links: true
+                link_noopener: true
+                link_noreferrer: true
+                target_blank: true
+                semantic_elements: true
+                restrict_assets: false
+                type: bard
+                display: Text
+          faq:
+            display: FAQ
+            fields:
+              faq:
+                fieldset: partial_faq
+                type: partial
+                display: FAQ
+          quote:
+            display: Quote
+            fields:
+              quote:
+                fieldset: partial_quote
+                type: partial
+                display: Quote
+              alignment:
+                options:
+                  left: Left
+                  centered: Centered
+                inline: true
+                type: radio
+                width: 33
+                display: Alignment
+                default: centered
+                instructions: 'Use _Left_ only if there is a block of text before'
+        type: bard
+        display: WYSIWYG
+taxonomies: false
+hide: true
+title: 'Partial - Wysiwyg'

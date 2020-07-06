@@ -3,10 +3,6 @@ locales:
     full: fr_CA
     name: Français
     url: 'http://tim.test:4000/'
-  en:
-    full: en_US
-    name: English
-    url: 'http://tim.test:4000/en'
 timezone: America/New_York
 date_format: 'F jS, Y'
 default_extension: md

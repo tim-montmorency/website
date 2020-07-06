@@ -34,8 +34,13 @@
                     {{ quote | markdown }}
                     {{ if cite }}<cite>&mdash; {{ cite}}</cite>{{ /if }}
                 </blockquote>
+            
+						{{ elseif type == "faq" }}
+						FAQQ
+							{{ partial src="molecules/{type}" }}
+						{{ /if }}
 
-            {{ /if }}
+            
 
         {{ /long_form }}
 
