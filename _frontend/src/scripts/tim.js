@@ -14,6 +14,7 @@ const myDKU = new DetectKeyboardUser();
 
 const Modules = {
   Example: require('./modules/Example').default,
+  Youtube: require('./modules/Youtube').default,
 };
 
 window.dom = {

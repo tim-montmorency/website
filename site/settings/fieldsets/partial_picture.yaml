@@ -1,18 +1,26 @@
-title: 'Default Globals'
-hide: true
 sections:
   main:
     display: Main
     fields:
-      site_name:
-        type: text
-        display: 'Website Name'
-        localizable: true
+      source:
+        container: main
+        folder: img
+        restrict: false
+        max_files: 1
+        type: assets
         width: 33
-      footer:
-        type: section
-        display: Footer
-      footer_credits:
+        display: Source
+      label:
+        type: text
+        width: 33
+        display: Label
+        localizable: true
+      filter:
+        fieldset: filters
+        type: partial
+        width: 33
+        display: Filter
+      caption:
         buttons:
           - bold
           - italic
@@ -30,18 +38,7 @@ sections:
         semantic_elements: true
         restrict_assets: false
         type: bard
-        width: 50
-        display: 'Footer credits'
-      footer_legal:
-        type: textarea
-        width: 50
-        display: 'Footer legal'
-      debug:
-        type: section
-        display: Debug
-      Bootstrap:
-        type: toggle
-        width: 25
-        display: 'Bootstrap grid'
-        default: 'false'
-taxonomies: true
+        display: Caption
+taxonomies: false
+hide: true
+title: 'Partial - Picture'

@@ -1,4 +1,6 @@
 .youtube {
+  $el: &;
+
   background-color: #000;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -8,18 +10,33 @@
   height: 0;
   margin: auto;
   overflow: hidden;
-  padding-bottom: 56.25%; // 16/9
+  padding-bottom: 56.25%;
   position: relative;
   width: 100%;
 
+  &__wrapper {
+    left: $grid-gutter-width*-1;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: calc(100% + #{$grid-gutter-width*2});
+  }
+
   iframe,
-  &__poster {
+  &__poster,
+  &__player {
     height: 100%;
     position: absolute;
     width: 100%;
   }
 
   &__poster {
+    left: 0;
+    object-fit: cover;
+    top: 0;
+  }
+
+  &__player {
     opacity: 0;
     transform: translateX(-100%);
     transition: opacity $duration, transform 0s $duration visibility 0s $duration;
@@ -35,8 +52,12 @@
     transform: translate(-50%, -50%);
   }
 
+  &__caption {
+    @extend %caption;
+  }
+
   &.is-playing & {
-    &__poster {
+    &__player {
       opacity: 1;
       transform: translateX(0);
       transition: opacity $duration ease;
@@ -44,5 +65,30 @@
     }
 
     &__button { opacity: 0; }
+  }
+
+  &--filter-highlight {
+    background-color: var(--highlight);
+
+    #{$el}__poster {
+      filter: grayscale(80%) contrast(1.25);
+      mix-blend-mode: multiply;
+      opacity: 0.75;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .youtube {
+    &__wrapper {
+      left: initial;
+      width: 100%;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .youtube {
+    &__wrapper { width: 83.33333%; } // 10 Bootstrap columns
   }
 }

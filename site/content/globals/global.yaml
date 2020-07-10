@@ -1,3 +1,7 @@
 site_name: 'Techniques d''Intégration Multimédia'
+footer_credits: '<p>DESIGN par les étudiants de 1e année <strong>Marc-Antoine Goupil</strong>, <strong>Raphaël Filion</strong> et le département TIM. Merci à l’étudiante <strong>Maloney Khim</strong> pour les inspirations.</p>'
+footer_legal: 'Techniques d''intégration multimédia - Collège Montmorency'
+debug: false
+Bootstrap: true
 author_name: 'Niles Peppertrout'
 id: d9bfc09a-3a90-41d3-8acc-3f551f8432af

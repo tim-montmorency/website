@@ -58,7 +58,7 @@ export default class {
   }
 
   createPlayerHtml() {
-    const player = `<div class="youtube__poster" id="youtube-player-${this.player.guid}">
+    const player = `<div class="youtube__player" id="youtube-player-${this.player.guid}">
       <div id="youtube-${this.player.guid}"></div>
     </div>
     <button class="youtube__button" disabled><span class="sr-only">play</span></button>`;

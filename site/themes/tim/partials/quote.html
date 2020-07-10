@@ -1,16 +1,18 @@
 {{ if text }} 
-  <blockquote class="quote quote--{{ alignment or 'center' }}">
-    <div class="quote__content">{{ text | widont }}</div>
-    {{ if person }} 
-      {{ relate:person }}
-      <footer class="quote__footer">— {{#
-     #}}<span itemtype="http://schema.org/Person">
-          {{ if firstname }}<span itemprop="givenName">{{ firstname }}</span>{{ /if }}
-          {{ if lastname }}<span itemprop="familyName">{{ lastname }}</span>{{ /if }}
-          {{ if gender }}<meta itemprop="gender" content="{{ gender }}">{{ /if }}
-        </span>
-      </footer>
-      {{ /relate:person }}
-    {{ /if }}
-  </blockquote>
+  {{ if section }}<section class="section section--{{ type }}"><div class="container">{{ /if }}
+    <blockquote class="quote quote--{{ alignment or 'center' }}">
+      <div class="quote__content">{{ text | widont }}</div>
+      {{ if person }} 
+        {{ relate:person }}
+        <footer class="quote__footer">— {{#
+      #}}<span itemtype="http://schema.org/Person">
+            {{ if firstname }}<span itemprop="givenName">{{ firstname }}</span>{{ /if }}
+            {{ if lastname }}<span itemprop="familyName">{{ lastname }}</span>{{ /if }}
+            {{ if gender }}<meta itemprop="gender" content="{{ gender }}">{{ /if }}
+          </span>
+        </footer>
+        {{ /relate:person }}
+      {{ /if }}
+    </blockquote>
+  {{ if section }}</div></section>{{ /if }}
 {{ /if }}

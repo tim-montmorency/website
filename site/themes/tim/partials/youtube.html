@@ -1,0 +1,14 @@
+{{ if url | is_embeddable }}
+  {{ if section }}<section class="section section--{{ type }}"><div class="container">{{ /if }}
+    <{{ if caption }}figure{{ else }}div{{ /if }} class="youtube__wrapper">
+      <a class="youtube{{ if filter != 'none' }} youtube--filter-{{ filter }}{{ /if }}" data-module="Youtube" href="{{ url | embed_url }}" tabindex="0">
+        <img class="youtube__poster" src="{{ poster or url | YoutubePoster }}" alt="">
+      </a>
+  
+      {{ if caption }}
+        <figcaption class="youtube__caption">{{ caption }}</figcaption>
+      {{ /if }}
+    </{{ if caption }}figure{{ else }}div{{ /if }}>
+    
+  {{ if section }}</div></section>{{ /if }}
+{{ /if }}

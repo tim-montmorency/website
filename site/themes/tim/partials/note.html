@@ -1,4 +1,8 @@
-<div class="note{{ if category}} note--{{ category }}{{ /if }}">
-  <span class="note__bg"></span>
-  <div class="note__content">{{ text | widont }}</div>
-</div>
+{{ if text }} 
+  {{ if section }}<section class="section section--{{ type }}"><div class="container">{{ /if }}
+    <div class="note{{ if category}} note--{{ category }}{{ /if }}">
+      <span class="note__bg"></span>
+      <div class="note__content">{{ text | widont }}</div>
+    </div>
+  {{ if section }}</div></section>{{ /if }}
+{{ /if }}

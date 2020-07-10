@@ -1,0 +1,16 @@
+sections:
+  main:
+    display: Main
+    fields:
+      filter:
+        options:
+          none: 🚫
+          highlight: Highlight
+        inline: true
+        type: radio
+        width: 33
+        display: Filter
+        default: none
+taxonomies: false
+hide: true
+title: Filters

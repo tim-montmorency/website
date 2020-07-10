@@ -1,9 +1,27 @@
-/**
- * Typography
- * ==========
- * |– ellipsis
- * |– uppercase
- */
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  font-family: font(secondary);
+  font-weight: bold;
+}
+
+h2,
+.h2 {
+  font-size: calc(24px + 1vw);
+}
+
+h3,
+.h3 {
+  font-size: calc(18px + 1vw);
+}
+
+h4,
+.h4 {
+  font-size: calc(16.5px + 0.6vw);
+}
 
 %ellipsis {
   overflow: hidden;
@@ -14,4 +32,41 @@
 %uppercase {
   letter-spacing: 0.05em; // horizontal rhythm (5 to 10% recommended)
   text-transform: uppercase;
+}
+
+%caption {
+  font-size: 0.8em;
+  opacity: 0.8;
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+}
+
+@include media-breakpoint-up(sm) {
+  %caption {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  h2,
+  .h2 {
+    font-size: 35px;
+    line-height: 1.5429;
+    margin-top: 0.7714em;
+  }
+
+  h3,
+  .h3 {
+    font-size: 28px;
+    line-height: 1.9286;
+    margin-top: 0.9643em;
+  }
+
+  h4,
+  .h4 {
+    font-size: 22.5px;
+    line-height: 1.2;
+    margin-top: 1.2em;
+  }
 }

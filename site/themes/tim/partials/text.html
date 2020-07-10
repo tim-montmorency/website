@@ -1,3 +1,5 @@
+{{ if section }}<section class="section section--{{ type }}"><div class="container">{{ /if }}
 <div class="text">
   {{ text | widont }}
 </div>
+{{ if section }}</div></section>{{ /if }}

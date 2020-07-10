@@ -1,7 +1,5 @@
 <section class="section theme-{{ theme:label }} wysiwyg">
-  <div class="container">
-    {{ part:wysiwyg  }}
-      {{ partial src="{type}" }}
-    {{ /part:wysiwyg }}
-  </div>
+  {{ part:wysiwyg  }}
+    {{ partial src="{type}" section="true" }}
+  {{ /part:wysiwyg }}
 </section>

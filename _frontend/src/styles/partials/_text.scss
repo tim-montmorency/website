@@ -12,7 +12,7 @@
     background-size: 100% 1px;
     color: currentColor;
     text-decoration: none;
-    transition: background-size $duration;
+    transition: background-size 0.2s;
 
     &:hover {
       background-size: 100% 3px;

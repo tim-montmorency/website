@@ -87,6 +87,20 @@ sections:
                 display: Alignment
                 default: centered
                 instructions: 'Use _Left_ only if there is a block of text before'
+          youtube:
+            display: Youtube
+            fields:
+              youtube:
+                fieldset: partial_youtube
+                type: partial
+                display: Youtube
+          picture:
+            display: Picture
+            fields:
+              picture:
+                fieldset: partial_picture
+                type: partial
+                display: Picture
         type: bard
         display: WYSIWYG
 taxonomies: false

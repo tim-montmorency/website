@@ -5,7 +5,7 @@ body:
     wysiwyg:
       -
         type: text
-        text: '<h2>La TIM, c''est un diplôme d''études collégiales (DEC) en techniques d''intégration multimédia (TIM).</h2><p>C''est une formation <strong>multidisciplinaire</strong> qui te fera développer tes compétences dans plein d''aspects des médias interactifs& et te permettra de:</p><ul><li><strong>Découvrir tes passions à l''intérieur des médias interactifs: sites web, applications mobiles, micro-jeux, installations interactives, animation, vidéo, réalité virtuelle</li><li><strong>Trouver un emploi&nbsp;</strong>dans le domaine du web comme designer, intégrateur, développeur front-end ou back-end.</li><li><strong>Poursuivre vers l''université&nbsp;</strong>en création de jeux vidéos, design graphique, animation 3D ou médias interactifs.</li></ul>'
+        text: '<h2>La TIM, c''est un diplôme d''études collégiales (DEC) en techniques d''intégration multimédia (TIM).<br></h2><p>C''est une formation <strong>multidisciplinaire</strong> qui te fera développer tes compétences dans plein d''aspects des médias interactifs&amp; et te permettra de:</p><ul><li><strong>Découvrir tes passions</strong> à l''intérieur des médias interactifs: sites web, applications mobiles, micro-jeux, installations interactives, animation, vidéo, réalité virtuelle</li><li><strong>Trouver un emploi&nbsp;</strong>dans le domaine du web comme designer, intégrateur, développeur front-end ou back-end.</li><li><strong>Poursuivre vers l''université</strong> en création de jeux vidéos, design graphique, animation 3D ou médias interactifs.</li></ul>'
       -
         type: faq
         faq:
@@ -48,9 +48,28 @@ body:
       -
         type: text
         text: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultrices est vitae enim ultricies, eget aliquet leo consequat. <a href="https://google.com" rel="noopener noreferrer">Quisque molestie</a> consequat ipsum, vitae ornare sem. Nullam aliquam mollis dignissim. Nunc convallis, est at fringilla dignissim, ligula neque egestas augue, ac congue quam libero eget lectus. Vivamus vestibulum orci dolor, ut pharetra tellus accumsan ut. Suspendisse sollicitudin, justo sit amet consectetur hendrerit, dui erat iaculis nulla, et mollis purus est bibendum sem. Suspendisse augue eros, mattis sit amet tellus ut, cursus efficitur felis. Nullam sed suscipit odio. Pellentesque id sodales orci. Sed ac pulvinar justo. Sed lorem erat, venenatis ut dictum ut, molestie ut ipsum. Integer dignissim diam ac lorem accumsan, ac dictum urna efficitur.</p>'
+      -
+        type: youtube
+        video: 'https://www.youtube.com/watch?v=_HY0waiRXJQ'
+        url: 'https://www.youtube.com/watch?v=_HY0waiRXJQ'
+        poster: /assets/img/coffee-mug.jpg
+        filter: highlight
+        caption: '<p>Harry Soulman qui fait un cover des Spice girls</p>'
+      -
+        type: text
+        text: '<p>asdsa</p>'
+      -
+        type: picture
+        url: /assets/img/coffee-mug.jpg
+        filter: highlight
+        caption: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat commodo molestie. Vestibulum eleifend ultricies nisl, nec egestas urna maximus id. Curabitur dui sem, facilisis a tortor non, vestibulum ultrices sapien. Nam vel lectus vitae massa volutpat semper sit amet in odio. Nam et lorem vulputate lectus scelerisque vulputate vel at sapien. Fusce tempor, mi sit amet consequat interdum, augue odio pharetra libero, id eleifend enim urna vel sapien. Cras pretium ligula id massa dignissim, eu iaculis orci scelerisque. Nunc tortor libero, viverra ac nulla quis, volutpat pellentesque odio.</p><p>Morbi vulputate arcu in leo maximus, ac tincidunt sapien maximus. Maecenas pretium sagittis fermentum. Morbi a nisl at enim convallis euismod non eget dolor. Duis nec augue placerat, ultricies dui quis, feugiat elit. Curabitur consequat elementum libero, gravida volutpat tellus finibus nec. Pellentesque sodales sem non massa laoreet.</p>'
+        source: /assets/img/coffee-mug.jpg
+        title: 'Un mug de TIM'
+        name: 'Mug de la TIM'
+        label: 'Très très long label pour faire un test de crop quand il n''y a pas assez d''espace'
     theme:
-      label: reversed
-      value: '#ffffff'
+      label: normal
+      value: '#111111'
 template: default
 fieldset: default
 id: db0ae4e3-4f10-4802-bc40-0b880cbf02c7

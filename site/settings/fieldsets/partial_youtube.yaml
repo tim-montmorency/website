@@ -1,0 +1,43 @@
+sections:
+  main:
+    display: Main
+    fields:
+      url:
+        type: video
+        width: 33
+        display: Url
+      poster:
+        container: main
+        folder: img
+        restrict: false
+        max_files: 1
+        type: assets
+        width: 33
+        display: Poster
+      filter:
+        fieldset: filters
+        type: partial
+        width: 33
+        display: Filter
+      caption:
+        buttons:
+          - bold
+          - italic
+          - unorderedlist
+          - orderedlist
+          - removeformat
+          - anchor
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: true
+        link_noreferrer: true
+        target_blank: true
+        semantic_elements: true
+        restrict_assets: false
+        type: bard
+        display: Caption
+taxonomies: false
+hide: true
+title: 'Partial - Youtube'
