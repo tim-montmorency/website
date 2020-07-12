@@ -1,5 +1,8 @@
 {{ if text }} 
-  {{ if section }}<section class="section section--{{ type }}"><div class="container">{{ /if }}
+  {{ if !unwrap }}
+  <section class="section section--{{ type }} theme-{{ section_theme or 'default' }}">
+    <div class="container">
+  {{ /if }}
     <blockquote class="quote quote--{{ alignment or 'center' }}">
       <div class="quote__content">{{ text | widont }}</div>
       {{ if person }} 
@@ -14,5 +17,5 @@
         {{ /relate:person }}
       {{ /if }}
     </blockquote>
-  {{ if section }}</div></section>{{ /if }}
+  {{ if !unwrap }}</div></section>{{ /if }}
 {{ /if }}

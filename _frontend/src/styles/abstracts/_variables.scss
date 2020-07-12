@@ -14,12 +14,6 @@
   --highlight: var(--red);
 }
 
-.theme-normal {
-  --primary: var(--black);
-  --secondary: var(--white);
-  --highlight: var(--red);
-}
-
 .theme-shade {
   --primary: var(--black-light);
   --secondary: var(--white);
@@ -79,6 +73,8 @@ $colors: (
 );
 
 $themes: (
+  default: (
+  ),
   dark: (
     primary: #000,
     secondary: #fff,

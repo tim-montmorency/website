@@ -20,39 +20,6 @@
     width: auto;
   }
 
-  &__label {
-    @extend %uppercase;
-
-    bottom: -0.5em;
-    color: var(--primary);
-    display: block;
-    font-weight: normal;
-    max-width: 80%;
-    padding: 0.5em;
-    position: absolute;
-    right: 0.25em;
-    z-index: 1;
-
-    &::before {
-      backdrop-filter: blur(5px);
-      background: var(--secondary);
-      content: '';
-      height: 100%;
-      left: $grid-gutter-width * -0.5;
-      position: absolute;
-      top: 0;
-      transform: skew(5deg);
-      width: calc(100% + #{$grid-gutter-width});
-    }
-
-    &__text {
-      @extend %ellipsis;
-
-      display: block;
-      position: relative;
-    }
-  }
-
   &__caption {
     @extend %caption;
   }

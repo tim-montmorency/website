@@ -1,13 +1,12 @@
 {{ if source }}
-  {{ if section }}<section class="section section--{{ type }}"><div class="container">{{ /if }}
+  {{ if !unwrap }}
+  <section class="section section--{{ type }} theme-{{ section_theme or 'default' }}">
+    <div class="container">
+  {{ /if }}
     <{{ if caption }}figure{{ else }}div{{ /if }} class="picture__wrapper">
       {{ assets:source }}
         <picture class="picture picture--{{ if width > height }}landscape{{ else }}portrait{{ /if }}{{ if label }} picture--has-label{{ /if }}{{ if filter != 'none' }} picture--filter-{{ filter }}{{ /if }}">
-          {{ if label }} 
-            <strong class="picture__label">
-              <span class="picture__label__text">{{ label }}</span>
-            </strong>
-          {{ /if }}
+          {{ partial:media-label }}
           <img class="picture__image" src="{{ url }}" alt="{{ alt }}" loading="lazy" width="{{ width }}" height="{{ height }}">
         </picture>
       {{ /assets:source }}
@@ -17,5 +16,5 @@
       {{ /if }}
     </{{ if caption }}figure{{ else }}div{{ /if }}>
     
-  {{ if section }}</div></section>{{ /if }}
+  {{ if !unwrap }}</div></section>{{ /if }}
 {{ /if }}

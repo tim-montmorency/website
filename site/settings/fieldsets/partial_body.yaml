@@ -2,15 +2,7 @@ sections:
   main:
     display: Main
     fields:
-      theme:
-        type: color_swatches
-        display: Theme
-        colors:
-          normal: '#111111'
-          reversed: '#ffffff'
-          highlight: '#ff003a'
-        default: normal
-      wysiwyg:
+      body:
         buttons:
           - h2
           - h3
@@ -70,6 +62,15 @@ sections:
                 fieldset: partial_faq
                 type: partial
                 display: FAQ
+              section_theme:
+                options:
+                  default: Default
+                  reversed: Reversed
+                  highlight: Highlight
+                type: select
+                width: 33
+                display: 'Section theme'
+                default: default
           quote:
             display: Quote
             fields:
@@ -101,8 +102,15 @@ sections:
                 fieldset: partial_picture
                 type: partial
                 display: Picture
+          split:
+            display: Split
+            fields:
+              split:
+                fieldset: partial_split
+                type: partial
+                display: Split
         type: bard
-        display: WYSIWYG
+        display: Body
 taxonomies: false
 hide: true
-title: 'Partial - Wysiwyg'
+title: 'Partial - Body'

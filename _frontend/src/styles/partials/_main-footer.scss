@@ -3,24 +3,24 @@
   --grid-size: 50px;
   --grid-blur: 1px;
 
+  align-items: flex-end;
   background-color: var(--primary);
   color: var(--secondary);
+  display: flex;
   min-height: 200px;
-  position: relative;
-  width: 100%;
   overflow: hidden;
   perspective: 800px;
-  display: flex;
-  align-items: flex-end;
+  position: relative;
+  width: 100%;
 
   &::before {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, var(--primary) 100%);
     content: '';
+    height: $grid-gutter-width*2;
+    left: 0;
     position: absolute;
     top: -2px;
-    left: 0;
     width: 100%;
-    height: $grid-gutter-width*2;
-    background-image: linear-gradient(0deg, rgba(0,0,0,0) 0%, var(--primary) 100%);
     z-index: 1;
   }
 

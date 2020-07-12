@@ -9,7 +9,6 @@
   display: block;
   height: 0;
   margin: auto;
-  overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
   width: 100%;
@@ -23,11 +22,16 @@
   }
 
   iframe,
+  &__frame,
   &__poster,
   &__player {
     height: 100%;
     position: absolute;
     width: 100%;
+  }
+
+  &__frame {
+    overflow: hidden;
   }
 
   &__poster {
@@ -52,19 +56,30 @@
     transform: translate(-50%, -50%);
   }
 
+  .media-label {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform $duration;
+  }
+
   &__caption {
     @extend %caption;
   }
 
-  &.is-playing & {
-    &__player {
+  &.is-playing {
+    #{$el}__player {
       opacity: 1;
       transform: translateX(0);
       transition: opacity $duration ease;
       visibility: visible;
     }
 
-    &__button { opacity: 0; }
+    #{$el}__button { opacity: 0; }
+
+    .media-label {
+      opacity: 0;
+      transform: translateY($grid-gutter-width*0.5);
+    }
   }
 
   &--filter-highlight {
@@ -74,6 +89,12 @@
       filter: grayscale(80%) contrast(1.25);
       mix-blend-mode: multiply;
       opacity: 0.75;
+    }
+  }
+
+  &--has-label {
+    + #{$el}__caption {
+      margin-top: 1.5em;
     }
   }
 }

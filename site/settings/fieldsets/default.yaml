@@ -5,20 +5,22 @@ sections:
     fields:
       title:
         type: text
-        width: 66
+        width: 50
         localizable: true
       slug:
         type: text
-        width: 33
+        width: 25
+      theme:
+        options:
+          default: Default
+          reversed: Reversed
+          highlight: Highlight
+        type: select
+        width: 25
+        display: Theme
+        default: default
       body:
-        sets:
-          wysiwyg:
-            display: WYSIWYG
-            fields:
-              wysiwyg:
-                fieldset: 'Partial - Wysiwyg'
-                type: partial
-                display: WYSIWYG
-        type: replicator
+        fieldset: 'partial_body'
+        type: partial
         display: Body
 taxonomies: true

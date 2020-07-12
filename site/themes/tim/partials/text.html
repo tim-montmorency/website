@@ -1,5 +1,8 @@
-{{ if section }}<section class="section section--{{ type }}"><div class="container">{{ /if }}
-<div class="text">
-  {{ text | widont }}
-</div>
-{{ if section }}</div></section>{{ /if }}
+{{ if !unwrap }}
+  <section class="section section--{{ type }} theme-{{ section_theme or 'default' }}">
+    <div class="container">
+{{ /if }}
+  <div class="text">
+    {{ text | widont }}
+  </div>
+{{ if !unwrap }}</div></section>{{ /if }}

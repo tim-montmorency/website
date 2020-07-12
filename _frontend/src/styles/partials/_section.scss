@@ -1,0 +1,13 @@
+.section {
+  padding-bottom: $spacer;
+  padding-top: $spacer;
+
+  // combining paddings when two section have the same theme
+  @each $theme, $map in $themes {
+    &.theme--#{$theme} {
+      & + & {
+        padding-top: 0;
+      }
+    }
+  }
+}

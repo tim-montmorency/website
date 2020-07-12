@@ -3,8 +3,8 @@ import { v1 as uuid } from 'uuid';
 export default class {
   constructor(el) {
     this.dom = {
-      ...window.dom,
       el,
+      frame: el.querySelector('.youtube__frame'),
     };
 
     // -- Properties
@@ -62,7 +62,7 @@ export default class {
       <div id="youtube-${this.player.guid}"></div>
     </div>
     <button class="youtube__button" disabled><span class="sr-only">play</span></button>`;
-    this.dom.el.insertAdjacentHTML('beforeend', player);
+    this.dom.frame.insertAdjacentHTML('beforeend', player);
     this.dom.player = this.dom.el.querySelector(`#youtube-player-${this.player.guid}`);
     this.dom.button = this.dom.el.querySelector('.youtube__button');
   }
@@ -76,7 +76,7 @@ export default class {
       const tag = document.createElement('script');
       tag.id = 'youtube-api';
       tag.src = '//www.youtube.com/iframe_api';
-      this.dom.body.insertAdjacentElement('beforeend', tag);
+      document.body.insertAdjacentElement('beforeend', tag);
 
       window.onYouTubeIframeAPIReady = () => document.dispatchEvent(new CustomEvent('youtube-ready'));
     }

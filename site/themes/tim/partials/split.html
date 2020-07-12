@@ -1,0 +1,28 @@
+{{ if !unwrap }}
+<section class="section section--{{ type }} theme-{{ section_theme or 'default' }}">
+  <div class="container">
+{{ /if }}
+
+  <div class="row">
+    {{ left_column scope="left" }}
+    
+      <div class="split__column split__column--left col-12 col-md-6 theme-{{ left_theme }}">
+        <div class="split__content">
+          {{ left }}
+            {{ partial src="{type}" unwrap="true" }}
+          {{ /left }}
+        </div>
+      </div>
+    {{ /left_column }}
+
+    {{ right_column scope="right" }}
+      <div class="split__column split__column--right col-12 col-md-6 theme-{{ right_theme }}">
+        <div class="split__content">
+          {{ right }}
+            {{ partial src="{type}" unwrap="true" }}
+          {{ /right }}
+        </div>
+      </div>
+    {{ /right_column }}
+  </div>
+{{ if !unwrap }}</div></section>{{ /if }}

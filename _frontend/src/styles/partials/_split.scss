@@ -1,0 +1,38 @@
+.split {
+  &__content {
+    position: relative;
+    width: 100%;
+  }
+
+  &__column {
+    color: var(--secondary);
+    background-color: var(--primary);
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .split {
+    &__column {
+      &::before {
+        content: '';
+        position: absolute;
+        top: $spacer*-1;
+        width: 51vw;
+        height: calc(100% + #{$spacer*2});
+        background-color: var(--primary);
+      }
+      
+      &--left {
+        &::before {
+          right: 0;
+        }
+      }
+  
+      &--right {
+        &::before {
+          left: 0;
+        }
+      }
+    }
+  }
+}

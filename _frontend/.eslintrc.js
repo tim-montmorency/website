@@ -31,6 +31,7 @@ module.exports = {
   },
   rules: {
     'class-methods-use-this': 'off', // Vanilla JS
+    'import/no-unresolved': 'off',
     'max-len': ['error', { code: 120, ignoreUrls: true, tabWidth: 2 }],
     'no-console': 'off',
     'no-param-reassign': ['error', {

@@ -14,11 +14,10 @@ sections:
         type: assets
         width: 33
         display: Poster
-      filter:
-        fieldset: filters
-        type: partial
+      label:
+        type: text
         width: 33
-        display: Filter
+        display: Label
       caption:
         buttons:
           - bold
@@ -38,6 +37,12 @@ sections:
         restrict_assets: false
         type: bard
         display: Caption
+        width: 66
+      filter:
+        fieldset: filters
+        type: partial
+        width: 33
+        display: Filter
 taxonomies: false
 hide: true
 title: 'Partial - Youtube'

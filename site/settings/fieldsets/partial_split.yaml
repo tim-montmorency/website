@@ -1,7 +1,119 @@
 sections:
   main:
     display: Main
-    fields: {  }
+    fields:
+      left:
+        type: section
+        display: Left
+      left_theme:
+        options:
+          default: Default
+          reversed: Reversed
+          highlight: Highlight
+        type: select
+        width: 33
+        display: Theme
+        default: default
+      left_column:
+        sets:
+          body:
+            display: Text
+            fields:
+              body:
+                buttons:
+                  - h2
+                  - h3
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - quote
+                  - anchor
+                style: sans
+                spellcheck: true
+                allow_source: true
+                allow_internal_links: true
+                link_noopener: true
+                link_noreferrer: true
+                target_blank: true
+                semantic_elements: true
+                restrict_assets: false
+                type: bard
+                display: Body
+                sets:
+                  faq:
+                    display: FAQ
+                    fields:
+                      faq:
+                        fieldset: partial_faq
+                        type: partial
+                        display: FAQ
+          picture:
+            display: Picture
+            fields:
+              picture:
+                fieldset: partial_picture
+                type: partial
+                display: Picture
+        type: replicator
+        display: 'Left column'
+      right:
+        type: section
+        display: Right
+      right_theme:
+        options:
+          default: Default
+          reversed: Reversed
+          highlight: Highlight
+        type: select
+        width: 33
+        display: Theme
+        default: default
+      right_column:
+        sets:
+          body:
+            display: Text
+            fields:
+              body:
+                buttons:
+                  - h2
+                  - h3
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - quote
+                  - anchor
+                style: sans
+                spellcheck: true
+                allow_source: true
+                allow_internal_links: true
+                link_noopener: true
+                link_noreferrer: true
+                target_blank: true
+                semantic_elements: true
+                restrict_assets: false
+                type: bard
+                display: Body
+                sets:
+                  faq:
+                    display: FAQ
+                    fields:
+                      faq:
+                        fieldset: partial_faq
+                        type: partial
+                        display: FAQ
+          picture:
+            display: Picture
+            fields:
+              picture:
+                fieldset: partial_picture
+                type: partial
+                display: Picture
+        type: replicator
+        display: 'Right column'
 taxonomies: false
 hide: true
 title: 'Partial - Split'

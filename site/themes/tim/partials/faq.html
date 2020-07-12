@@ -1,4 +1,7 @@
-{{ if section }}<section class="section section--{{ type }}"><div class="container">{{ /if }}
+{{ if !unwrap }}
+  <section class="section section--{{ type }} theme-{{ section_theme or 'default' }}">
+    <div class="container">
+{{ /if }}
 <div class="faq">
   {{ faq }}
     <details class="faq__item">
@@ -7,4 +10,4 @@
     </details>
   {{ /faq }}
 </div>
-{{ if section }}</div></section>{{ /if }}
+{{ if !unwrap }}</div></section>{{ /if }}

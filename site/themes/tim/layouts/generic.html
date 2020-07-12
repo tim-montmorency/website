@@ -11,15 +11,12 @@
     <link rel="stylesheet" href="{{ theme:css }}">
 </head>
 
-<body class="section-{{ segment_1 or "home" }} theme-{{ theme or 'default' }}">
-    {{ partial:nav }}
-    <main>
-        {{ partial:body }}
-    </main>
+<body class="page-{{ segment_1 or "home" }} theme-{{ theme or 'default' }}">
+  {{ partial:nav }}
+  {{ template_content }}
+  {{ partial:main-footer }}
+  {{ partial:helpers/bootstrap-grid }}
 
-    {{ partial:main-footer }}
-    {{ partial:helpers/bootstrap-grid }}
-
-    <script src="{{ theme:js }}"></script>
+  <script src="{{ theme:js }}"></script>
 </body>
 </html>
