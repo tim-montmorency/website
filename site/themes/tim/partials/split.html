@@ -1,11 +1,16 @@
 {{ if !unwrap }}
-<section class="section section--{{ type }} theme-{{ section_theme or 'default' }}">
+<section class="section section--{{ type }} 
+  {{ if section_theme == left_theme && section_theme == right_theme }}
+    theme-{{ section_theme or 'default' }}
+  {{ else }}
+    theme-custom
+  {{ /if }}
+    ">
   <div class="container">
 {{ /if }}
 
   <div class="row">
     {{ left_column scope="left" }}
-    
       <div class="split__column split__column--left col-12 col-md-6 theme-{{ left_theme }}">
         <div class="split__content">
           {{ left }}

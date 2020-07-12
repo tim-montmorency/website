@@ -2,9 +2,14 @@
   padding-bottom: $spacer;
   padding-top: $spacer;
 
+  &--no-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   // combining paddings when two section have the same theme
   @each $theme, $map in $themes {
-    &.theme--#{$theme} {
+    &.theme-#{$theme} {
       & + & {
         padding-top: 0;
       }

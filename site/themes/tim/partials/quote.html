@@ -1,6 +1,6 @@
 {{ if text }} 
   {{ if !unwrap }}
-  <section class="section section--{{ type }} theme-{{ section_theme or 'default' }}">
+  <section class="section section--{{ type }}{{ if alignment == 'left' }} section--no-padding{{ /if }} theme-{{ section_theme or 'default' }}">
     <div class="container">
   {{ /if }}
     <blockquote class="quote quote--{{ alignment or 'center' }}">

@@ -34,6 +34,7 @@
 
   // Modifiers
   &--left {
+    margin-top: 0;
     border-left: solid 3px var(--highlight);
 
     #{$el}__content {

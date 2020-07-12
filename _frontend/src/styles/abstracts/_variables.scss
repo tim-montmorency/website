@@ -73,8 +73,9 @@ $colors: (
 );
 
 $themes: (
-  default: (
-  ),
+  default: (),
+  reversed: (),
+  highlight: (),
   dark: (
     primary: #000,
     secondary: #fff,
