@@ -5,3 +5,7 @@ fieldset: assets
 assets:
   img/coffee-mug.jpg:
     title: 'Coffee Mug'
+  img/studio-2.jpg:
+    focus: 56-70
+  img/camera.jpg:
+    focus: 55-62

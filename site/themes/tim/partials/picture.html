@@ -3,18 +3,24 @@
   <section class="section section--{{ type }} theme-{{ section_theme or 'default' }}">
     <div class="container">
   {{ /if }}
-    <{{ if caption }}figure{{ else }}div{{ /if }} class="picture__wrapper">
-      {{ assets:source }}
-        <picture class="picture picture--{{ if width > height }}landscape{{ else }}portrait{{ /if }}{{ if label }} picture--has-label{{ /if }}{{ if filter != 'none' }} picture--filter-{{ filter }}{{ /if }}">
+    {{ assets:source }}
+    <{{ if caption }}figure{{ else }}div{{ /if }} 
+      class="media media--picture picture{{#
+        #}} media--{{ if width > height }}landscape{{ else }}portrait{{ /if }}{{#
+        #}} media--style-{{ picture_style or 'normal' }}{{#
+        #}}{{ if label }} media--has-label{{ /if }}{{#
+        #}}{{ if filter != 'none' }} media--filter-{{ filter }}{{ /if }}">
+
+        <picture class="media__wrapper">
           {{ partial:media-label }}
-          <img class="picture__image" src="{{ url }}" alt="{{ alt }}" loading="lazy" width="{{ width }}" height="{{ height }}">
+          <img class="media__el" src="{{ url }}" alt="{{ alt }}" loading="lazy" width="{{ width }}" height="{{ height }}" style="object-position: {{ focus_css }}">
         </picture>
-      {{ /assets:source }}
-  
+      
       {{ if caption }}
-        <figcaption class="picture__caption">{{ caption }}</figcaption>
+        <figcaption class="media__caption">{{ caption }}</figcaption>
       {{ /if }}
     </{{ if caption }}figure{{ else }}div{{ /if }}>
+    {{ /assets:source }}
     
   {{ if !unwrap }}</div></section>{{ /if }}
 {{ /if }}

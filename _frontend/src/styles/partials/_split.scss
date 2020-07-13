@@ -53,11 +53,21 @@
           left: initial;
           right: 0; 
         }
+
+        .text { padding-right: $grid-gutter-width*0.5; }
       }
   
       &--right {
         &::before { left: 0; }
+
+        .text { padding-left: $grid-gutter-width*0.5; }
       }
+    }
+
+    &__content { 
+      display: flex;
+      justify-content: center;
+      min-height: 100%;
     }
   }
 }

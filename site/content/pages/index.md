@@ -5,6 +5,110 @@ body:
     type: text
     text: '<h2>La TIM, c''est un diplôme d''études collégiales (DEC) en techniques d''intégration multimédia (TIM).<br></h2><p>C''est une formation <strong>multidisciplinaire</strong> qui te fera développer tes compétences dans plein d''aspects des médias interactifs&amp; et te permettra de:</p><ul><li><strong>Découvrir tes passions</strong> à l''intérieur des médias interactifs: sites web, applications mobiles, micro-jeux, installations interactives, animation, vidéo, réalité virtuelle</li><li><strong>Trouver un emploi&nbsp;</strong>dans le domaine du web comme designer, intégrateur, développeur front-end ou back-end.</li><li><strong>Poursuivre vers l''université</strong> en création de jeux vidéos, design graphique, animation 3D ou médias interactifs.</li></ul>'
   -
+    type: note
+    category: generic
+    text: '<p>Et c''est ça qui est ça</p>'
+  -
+    type: quote
+    quote: 'Le temps est dur'
+    person:
+      - 626a6dd0-e487-4970-ac05-39542a1ed095
+    has_other_person: true
+    text: 'Exemple de citation d''un élève'
+    alignment: left
+  -
+    type: text
+    text: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultrices est vitae enim ultricies, eget aliquet leo consequat. <a href="https://google.com" rel="noopener noreferrer">Quisque molestie</a> consequat ipsum, vitae ornare sem. Nullam aliquam mollis dignissim. Nunc convallis, est at fringilla dignissim, ligula neque egestas augue, ac congue quam libero eget lectus. Vivamus vestibulum orci dolor, ut pharetra tellus accumsan ut. Suspendisse sollicitudin, justo sit amet consectetur hendrerit, dui erat iaculis nulla, et mollis purus est bibendum sem. Suspendisse augue eros, mattis sit amet tellus ut, cursus efficitur felis. Nullam sed suscipit odio. Pellentesque id sodales orci. Sed ac pulvinar justo. Sed lorem erat, venenatis ut dictum ut, molestie ut ipsum. Integer dignissim diam ac lorem accumsan, ac dictum urna efficitur.</p>'
+  -
+    type: youtube
+    video: 'https://www.youtube.com/watch?v=_HY0waiRXJQ'
+    url: 'https://www.youtube.com/watch?v=_HY0waiRXJQ'
+    poster: /assets/img/coffee-mug.jpg
+    filter: highlight
+    caption: '<p>Hairy Soulman qui fait un cover des Spice girls</p>'
+    label: 'Hairy Soulman - Cover'
+  -
+    type: text
+    text: '<p><br></p><h2>Des laboratoires PC &amp; Mac</h2><p>Nos nouveaux laboratoires sont équipés d’ordinateurs très performants et des logiciels les plus utilisés dans l’industrie.</p><h2>Les studios</h2><p>Des installations fraîchement construites par une firme d’architectes et de consultants technologiques, afin d''offrir des studios uniques et adaptés aux besoins des médias interactifs. Nous sommes fiers d’accueillir les étudiants dans cette nouvelle annexe du collège, qui leur permettra de créer des projets multimédias dans un cadre professionnel.  Ces lieux sont modulables, interconnectés et équipés de matériel audio et visuel de haut de gamme et à la fine pointe de la technologie.&nbsp;&nbsp;</p>'
+  -
+    type: split
+    left_theme: shade
+    left_column:
+      -
+        type: body
+        body:
+          -
+            type: text
+            text: |
+              <h3>Grand Studio</h3><ul><li>Studio insonorisé pour tournage ou développement d’installation interactive <em>(1500 pieds carrés)</em></li><li>Cyclorama blanc  
+              
+              Grille d’accrochage à 12 pieds de hauteur.</li><li>Possibilité de travailler sur fond noir <em>(rideau noir)</em> ou sur fond blanc <em>(mur blanc)</em> sur tous les murs du studio.</li><li>Plancher démontable connectique au sol et au plafond.&nbsp;</li></ul>
+    right_theme: shade
+    right_column:
+      -
+        type: picture
+        source: /assets/img/studio.jpg
+        filter: none
+        picture_style: cover
+  -
+    type: split
+    left_theme: default
+    left_column:
+      -
+        type: picture
+        source: /assets/img/studio-2.jpg
+        filter: none
+        picture_style: cover
+    right_theme: default
+    right_column:
+      -
+        type: body
+        body:
+          -
+            type: text
+            text: '<h3>Petit studio</h3><ul><li>Studio insonorisé pour enregistrement sonore et/ou tournage (400 pieds carrés)&nbsp;</li><li>Régie de mixage dédiée à la conception et spatialisation sonore&nbsp;</li><li>&nbsp;Grille d’accrochage&nbsp;</li><li>&nbsp;Salle des matrices&nbsp;</li></ul>'
+  -
+    type: text
+    text: '<h2>Les équipements</h2><p>La Collège Montmorency met à la disposition des étudiants en techniques d’intégration multimédia des équipements à la fine pointe de la technologie.</p>'
+  -
+    type: split
+    left_theme: shade
+    left_column:
+      -
+        type: body
+        body:
+          -
+            type: text
+            text: '<ul><li>Caméra Sony 4K</li><li>Caméra 360 degrés</li><li>Microphone 360 degrés</li><li>Stabilisateur Ronin&nbsp;</li><li>&nbsp;Rails Edelkone&nbsp;</li><li>Casque de réalité virtuelle&nbsp;&nbsp;</li><li>&nbsp;Casque de réalité virtuelle Oculus&nbsp;</li><li>&nbsp;Projecteur 4K</li><li>Tablettes graphiques</li></ul>'
+    right_theme: shade
+    right_column:
+      -
+        type: picture
+        source: /assets/img/camera.jpg
+        label: 'Caméra Sony 4K'
+        filter: none
+        picture_style: cover
+  -
+    type: split
+    left_theme: default
+    left_column:
+      -
+        type: picture
+        source: /assets/img/soudure.jpg
+        filter: none
+        picture_style: cover
+    right_theme: default
+    right_column:
+      -
+        type: picture
+        source: /assets/img/casque-realite.jpg
+        label: 'Casque de réalité virtuelle'
+        filter: none
+        picture_style: normal
+  -
+    type: text
+    text: '<h2>Foire aux questions</h2>'
+  -
     type: faq
     faq:
       -
@@ -31,56 +135,7 @@ body:
         type: item
         question: 'C''est quoi l''ambiance de la TIM?'
         answer: '<p><strong>Sérieux? Malade :)</strong> L''ambiance de la TIM est vraiment cool. Les profs sont compétents et passionnés. Les locaux sont full bien équipés, l''ambiance est bonne! Quand tu t''impliques un peu, tu te fais ta petite gang. Même les plus solitaires s’intègrent aux travaux d’équipe. On fait partie de quelque chose de plus grand, qui s''appelle "La TIM", on est à la fine pointe des technologies front-end et back-end.</p>'
-    section_theme: reversed
-  -
-    type: note
-    category: generic
-    text: '<p>Et c''est ça qui est ça</p>'
-  -
-    type: quote
-    quote: 'Le temps est dur'
-    person:
-      - 626a6dd0-e487-4970-ac05-39542a1ed095
-    has_other_person: true
-    text: 'Exemple de citation d''un élève'
-    alignment: left
-  -
-    type: text
-    text: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultrices est vitae enim ultricies, eget aliquet leo consequat. <a href="https://google.com" rel="noopener noreferrer">Quisque molestie</a> consequat ipsum, vitae ornare sem. Nullam aliquam mollis dignissim. Nunc convallis, est at fringilla dignissim, ligula neque egestas augue, ac congue quam libero eget lectus. Vivamus vestibulum orci dolor, ut pharetra tellus accumsan ut. Suspendisse sollicitudin, justo sit amet consectetur hendrerit, dui erat iaculis nulla, et mollis purus est bibendum sem. Suspendisse augue eros, mattis sit amet tellus ut, cursus efficitur felis. Nullam sed suscipit odio. Pellentesque id sodales orci. Sed ac pulvinar justo. Sed lorem erat, venenatis ut dictum ut, molestie ut ipsum. Integer dignissim diam ac lorem accumsan, ac dictum urna efficitur.</p>'
-  -
-    type: youtube
-    video: 'https://www.youtube.com/watch?v=_HY0waiRXJQ'
-    url: 'https://www.youtube.com/watch?v=_HY0waiRXJQ'
-    poster: /assets/img/coffee-mug.jpg
-    filter: highlight
-    caption: '<p>Hairy Soulman qui fait un cover des Spice girls</p>'
-    label: 'Hairy Soulman - Cover'
-  -
-    type: text
-    text: '<p>asdsa</p>'
-  -
-    type: split
-    left_theme: reversed
-    left_column:
-      -
-        type: body
-        body:
-          -
-            type: text
-            text: '<p>Test</p>'
-          -
-            type: faq
-            faq:
-              -
-                type: item
-                question: 'Où ça?'
-                answer: '<p>Bien la-bas</p>'
-    right_theme: highlight
-    right_column:
-      -
-        type: picture
-        source: /assets/img/c2.jpg
-        filter: none
+    section_theme: default
   -
     type: picture
     url: /assets/img/coffee-mug.jpg

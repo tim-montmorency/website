@@ -83,7 +83,7 @@
   }
 
   &--filter-highlight {
-    background-color: var(--highlight);
+    background-color: var(--red);
 
     #{$el}__poster {
       filter: grayscale(80%) contrast(1.25);

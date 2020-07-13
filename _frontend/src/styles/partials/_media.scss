@@ -1,0 +1,120 @@
+.media {
+  $el: &;
+
+  left: $grid-gutter-width*-1;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  width: calc(100% + #{$grid-gutter-width*2});
+
+  &__wrapper {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: fit-content;
+  }
+
+  &__el {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+  }
+
+  &__caption { @extend %caption; }
+
+  &--has-label & {
+    &__caption { margin-top: 1.5em; }
+  }
+
+  &--filter-highlight & {
+    &__wrapper { background-color: var(--red); }
+
+    &__el {
+      filter: grayscale(80%) contrast(1.25);
+      mix-blend-mode: multiply;
+      opacity: 0.75;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .media {
+    left: initial;
+    max-width: 100%;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .media {
+    $el: &;
+
+    .section--split & { 
+      align-self: center; 
+
+      &--style-cover {
+        position: absolute;
+        top: $spacer*-1;
+        max-width: none;
+        width: calc(50.5vw - #{$$grid-gutter-width*0.5});
+        height: calc(100% + #{$spacer*2});
+        object-fit: cover;
+
+        #{$el}__wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        #{$el}__el {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .split__column--left & {
+      &--style-cover { right: $grid-gutter-width*-0.5;; }
+    }
+
+    .split__column--right & {
+      &--style-cover { left: $grid-gutter-width*-0.5;; }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .media {
+    $el: &;
+
+    width: 83.33333%; // 10 Bootstrap columns
+
+    .section--split & { 
+      width: 100%; // Remove gap in split
+
+      &--style-cover { width: calc(50.5vw - #{$$grid-gutter-width*0.5}); }
+    } 
+
+
+    &--portrait { max-width: 78.3%; } // 8 Bootstrap columns
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .media {
+    .section--split & {
+      &--style-cover {
+        width: calc(100% + #{$grid-gutter-width});
+        min-width: 700px;
+      }
+    }
+  }
+}

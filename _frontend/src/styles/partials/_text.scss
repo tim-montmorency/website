@@ -26,6 +26,12 @@
     &::marker {
       color: var(--highlight);
     }
+
+    li {
+      @extend %remove-ends-vertical-margin;
+
+      margin: 1.25rem 0;
+    }
   }
 
   ul {

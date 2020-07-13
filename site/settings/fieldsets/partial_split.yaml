@@ -10,6 +10,7 @@ sections:
           default: Default
           reversed: Reversed
           highlight: Highlight
+          shade: Shade
         type: select
         width: 33
         display: Theme
@@ -56,6 +57,14 @@ sections:
                 fieldset: partial_picture
                 type: partial
                 display: Picture
+              picture_style:
+                options:
+                  normal: Normal
+                  cover: Cover
+                inline: true
+                type: radio
+                width: 50
+                display: 'Picture style'
         type: replicator
         display: 'Left column'
       right:
@@ -66,6 +75,7 @@ sections:
           default: Default
           reversed: Reversed
           highlight: Highlight
+          shade: Shade
         type: select
         width: 33
         display: Theme
@@ -112,6 +122,15 @@ sections:
                 fieldset: partial_picture
                 type: partial
                 display: Picture
+              picture_style:
+                options:
+                  normal: Normal
+                  cover: Cover
+                inline: true
+                type: radio
+                width: 50
+                display: 'Picture style'
+                default: normal
         type: replicator
         display: 'Right column'
 taxonomies: false
