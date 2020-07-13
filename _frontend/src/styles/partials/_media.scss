@@ -21,10 +21,50 @@
     width: auto;
   }
 
+  &__label {
+    @extend %uppercase;
+
+    bottom: 10px;
+    right: 2em;
+    color: var(--primary);
+    display: block;
+    font-weight: normal;
+    font-size: 1.2rem;
+    max-width: 80%;
+    padding: 0.35em;
+    position: absolute;
+    z-index: 1;
+
+    &::before {
+      background: var(--secondary);
+      content: '';
+      height: 100%;
+      left: $grid-gutter-width * -0.5;
+      position: absolute;
+      top: 0;
+      transform: skew(5deg);
+      width: calc(100% + #{$grid-gutter-width});
+    }
+
+    &__text {
+      @extend %ellipsis;
+
+      display: block;
+      position: relative;
+    }
+  }
+
   &__caption { @extend %caption; }
 
   &--has-label & {
     &__caption { margin-top: 1.5em; }
+  }
+
+  &--cover & {
+    &__label {
+      bottom: 10px;
+      right: 2em;
+    }
   }
 
   &--filter-highlight & {
@@ -49,44 +89,49 @@
   .media {
     $el: &;
 
-    .section--split & { 
-      align-self: center; 
+    &__label {
+      bottom: -0.5em;
+      right: 0.25em;
+    }
 
-      &--style-cover {
-        position: absolute;
-        top: $spacer*-1;
+    .split & {
+      align-self: center;
+
+      &--cover {
+        height: calc(100% + var(--section-spacer) * 2);
         max-width: none;
-        width: calc(50.5vw - #{$$grid-gutter-width*0.5});
-        height: calc(100% + #{$spacer*2});
         object-fit: cover;
+        position: absolute;
+        top: calc(var(--section-spacer) * -1);
+        width: calc(50.5vw - #{$grid-gutter-width*0.5});
 
         #{$el}__wrapper {
+          height: 100%;
+          left: 0;
+          max-height: 100%;
+          max-width: 100%;
           position: absolute;
           top: 0;
-          left: 0;
           width: 100%;
-          height: 100%;
-          max-width: 100%;
-          max-height: 100%;
         }
 
         #{$el}__el {
+          height: 100%;
+          left: 0;
+          object-fit: cover;
           position: absolute;
           top: 0;
-          left: 0;
           width: 100%;
-          height: 100%;
-          object-fit: cover;
         }
       }
     }
 
     .split__column--left & {
-      &--style-cover { right: $grid-gutter-width*-0.5;; }
+      &--cover { right: $grid-gutter-width*-0.5; }
     }
 
     .split__column--right & {
-      &--style-cover { left: $grid-gutter-width*-0.5;; }
+      &--cover { left: $grid-gutter-width*-0.5; }
     }
   }
 }
@@ -97,12 +142,11 @@
 
     width: 83.33333%; // 10 Bootstrap columns
 
-    .section--split & { 
+    .split & {
       width: 100%; // Remove gap in split
 
-      &--style-cover { width: calc(50.5vw - #{$$grid-gutter-width*0.5}); }
-    } 
-
+      &--cover { width: calc(50.5vw - #{$grid-gutter-width*0.5}); }
+    }
 
     &--portrait { max-width: 78.3%; } // 8 Bootstrap columns
   }
@@ -110,10 +154,10 @@
 
 @include media-breakpoint-up(xxl) {
   .media {
-    .section--split & {
-      &--style-cover {
-        width: calc(100% + #{$grid-gutter-width});
+    .split & {
+      &--cover {
         min-width: 700px;
+        width: calc(100% + #{$grid-gutter-width});
       }
     }
   }

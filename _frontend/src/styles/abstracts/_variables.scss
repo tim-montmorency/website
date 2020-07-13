@@ -2,7 +2,7 @@
   --red-light: #ff3363;
   --red: #ff003a;
   --red-dark: #e00034;
-  --black-light: #292929;
+  --black-light: #181818;
   --black: #111;
   --black-dark: #000;
   --white-light: #fff;
@@ -12,6 +12,7 @@
   --primary: var(--black);
   --secondary: var(--white);
   --highlight: var(--red);
+  --section-spacer: 40px;
 }
 
 .theme-shade {
@@ -111,3 +112,9 @@ $fonts: (
   sans-serif: #{'Helvetica Neue', 'Helvetica', 'Arial', sans-serif},
   serif: #{'Georgia', 'Times', 'Times New Roman', serif},
 );
+
+@media (min-width: 992px) {
+  :root {
+    --section-spacer: 80px;
+  }
+}

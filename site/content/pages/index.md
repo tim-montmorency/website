@@ -39,10 +39,7 @@ body:
         body:
           -
             type: text
-            text: |
-              <h3>Grand Studio</h3><ul><li>Studio insonorisé pour tournage ou développement d’installation interactive <em>(1500 pieds carrés)</em></li><li>Cyclorama blanc  
-              
-              Grille d’accrochage à 12 pieds de hauteur.</li><li>Possibilité de travailler sur fond noir <em>(rideau noir)</em> ou sur fond blanc <em>(mur blanc)</em> sur tous les murs du studio.</li><li>Plancher démontable connectique au sol et au plafond.&nbsp;</li></ul>
+            text: '<h3>Grand Studio</h3><ul><li>Studio insonorisé pour tournage ou développement d’installation interactive <em>(1500 pieds&nbsp;carrés)</em></li><li>Cyclorama blanc</li><li>Grille d’accrochage à 12 pieds de&nbsp;hauteur.</li><li>Possibilité de travailler sur fond noir <em>(rideau noir)</em> ou sur fond blanc <em>(mur blanc)</em> sur tous les murs du&nbsp;studio.</li><li>Plancher démontable connectique au sol et au&nbsp;plafond</li></ul>'
     right_theme: shade
     right_column:
       -

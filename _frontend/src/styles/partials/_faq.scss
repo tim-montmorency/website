@@ -14,12 +14,12 @@
       bottom: 0;
       content: '';
       height: 3px;
-      left: 0;
+      left: $grid-gutter-width*-1;
       opacity: 1;
       position: absolute;
       transform: scaleY(0.3333);
       transition: transform $duration;
-      width: 100%;
+      width: calc(100% + #{$grid-gutter-width*2});
     }
 
     &:hover {
@@ -43,8 +43,8 @@
     cursor: pointer;
     display: block;
     font-family: font(secondary);
-    font-size: 1.25em; /* 22.5px */
-    line-height: 1.2em; /* 27px */
+    font-size: 18px;
+    line-height: 1.2;
     padding: $spacer*0.5 1em $spacer*0.5 0;
     position: relative;
     user-select: none;
@@ -89,6 +89,17 @@
   }
 
   & + &#{&} { margin-top: 0; }
+}
+
+@include media-breakpoint-up(sm) {
+  .faq {
+    &__item {
+      &::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
 }
 
 @keyframes faq {
