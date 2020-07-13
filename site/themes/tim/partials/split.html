@@ -1,8 +1,9 @@
 {{ if !unwrap }}
-<section class="section {{ type }} theme-{{# 
+<section class="section {{ type }}{{#
+  #}} split--{{ left_column }}{{ type }}{{ /left_column }}-{{ right_column }}{{ type }}{{ /right_column }}{{#
+  #}} theme-{{# 
   #}}{{ if section_theme == left_theme && section_theme == right_theme }}{{ section_theme or 'default' }}{{# 
-  #}}{{ else }}custom{{ /if }}{{# 
-  #}} split--{{ left_column }}{{ type }}{{ /left_column }}-{{ right_column }}{{ type }}{{ /right_column }}">
+  #}}{{ else }}custom{{ /if }}">
   <div class="container">
 {{ /if }}
 
