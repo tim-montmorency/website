@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Another awesome Statamic site">
     <title>{{ title ensure_right=" - " }}{{ site_name }}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&family=Quicksand:wght@400;700&family=Zilla+Slab:ital,wght@0,700;1,700&family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ theme:css }}">
 </head>
 
-<body class="section-{{ segment_1 or "home" }} theme-{{ theme or 'default' }}">
+<body class="page-{{ segment_1 or "home" }} page-{{ page_theme.label or 'dark' }} theme-alt1" data-module="ScrollDirection">
     {{ partial:nav }}
+    
     <main>
+        {{ partial:hero }}
         {{ partial:body }}
     </main>
 

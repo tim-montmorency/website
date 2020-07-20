@@ -1,6 +1,7 @@
 import '../styles/tim.scss';
 import 'mdn-polyfills/CustomEvent';
 import 'mdn-polyfills/NodeList.prototype.forEach';
+import smoothscroll from 'smoothscroll-polyfill';
 import DetectKeyboardUser from 'detect-keyboard-user';
 import JSvh from './helpers/JSvh';
 import UserAgentParser from './helpers/UserAgentParser';
@@ -12,54 +13,38 @@ const vh = new JSvh();
 /* eslint-disable-next-line */
 const myDKU = new DetectKeyboardUser();
 
+smoothscroll.polyfill();
+
 const Modules = {
-  Example: require('./modules/Example').default,
+  MagicLine: require('./modules/MagicLine').default,
+  ScrollDirection: require('./modules/ScrollDirection').default,
+  ToggleAria: require('./modules/ToggleAria').default,
   Youtube: require('./modules/Youtube').default,
 };
 
-window.dom = {
-  body: document.body,
-  html: document.documentElement,
-};
+window.init = function init() {
+  const items = document.querySelectorAll('[data-module]');
+  const styles = `background: ${'#18314f'}; color: #fff; padding: 0 0.25em;`;
 
-/**
- * Init - Instanciate and initialize Modules and/or Pages in the element provided
- * @param {element} [el=window.dom.body] - the element to search into for data-[type]
- * @param {array.<string>|string} [types=['module']] - 3 possible types: 'module', 'page' or ['page', 'module']
- */
-window.init = function init(el = window.dom.body, types = 'module') {
-  const currentTypes = typeof types === 'string' ? [types] : types;
-  if (!Array.isArray(currentTypes)) return;
-  currentTypes.forEach((type) => {
-    if (type !== 'module') return;
+  items.forEach((item) => {
+    const list = item.getAttribute('data-module').split(/\s+/);
 
-    const attr = `data-${type}`;
-    const classes = Modules;
-    const items = el.querySelectorAll(`[${attr}]`);
-    const styles = `background: ${'#18314f'}; color: #fff; padding: 0 0.25em;`;
-
-    console.log(items, `[${attr}]`);
-
-    items.forEach((item) => {
-      const list = item.getAttribute(attr).split(/\s+/);
-
-      list.forEach((name) => {
-        if (classes[name] !== undefined) {
-          console.log(`%c✔️${name}%O`, styles, { el: item });
-          new classes[name](item).init();
-        } else if (classes.Default !== undefined) {
-          console.warn(`%c⚠️${name}%O`, styles, { el: item });
-          new classes.Default(item).init();
-        } else {
-          console.error(`%c❌️${name}%O`, styles, { el: item });
-        }
-      });
+    list.forEach((name) => {
+      if (Modules[name] !== undefined) {
+        console.log(`%c✔️${name}%O`, styles, { el: item });
+        new Modules[name](item).init();
+      } else if (Modules.Default !== undefined) {
+        console.warn(`%c⚠️${name}%O`, styles, { el: item });
+        new Modules.Default(item).init();
+      } else {
+        console.error(`%c❌️${name}%O`, styles, { el: item });
+      }
     });
   });
 };
 
 if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
-  window.init(window.dom.body);
+  window.init();
 } else {
-  document.addEventListener('DOMContentLoaded', window.init(window.dom.body));
+  document.addEventListener('DOMContentLoaded', window.init());
 }

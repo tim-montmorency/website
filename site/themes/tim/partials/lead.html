@@ -1,0 +1,13 @@
+{{ if !unwrap }}
+  <section class="section lead theme-{{ section_theme or 'default' }}">
+    <div class="container">
+{{ /if }}
+  <div class="row">
+    <div class="lead__intro">
+      {{ lead | widont }}
+    </div>
+    <div class="lead__text">
+      {{ text | widont }}
+    </div>
+  </div>
+{{ if !unwrap }}</div></section>{{ /if }}

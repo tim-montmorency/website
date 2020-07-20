@@ -1,0 +1,250 @@
+.site-nav {
+  background-color: var(--background-dark);
+  color: var(--color);
+  display: block;
+  height: calc(100vh - 80px);
+  left: 0;
+  overflow: auto;
+  padding: 0;
+  pointer-events: all;
+  position: absolute;
+  top: 100%;
+  transform: translateY(-105vh);
+  transition: transform 0.5s;
+  width: 100%;
+  z-index: 1;
+
+  .ie & { margin-left: auto; }
+
+  a { text-decoration: none; }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__list {
+    @extend %list-reset;
+
+    display: block;
+    margin: 0;
+    position: relative;
+
+    svg {
+      fill: currentColor;
+      flex: 0 0 2.4rem;
+      margin-left: 0.3em;
+      vertical-align: middle;
+      width: 2.4rem;
+    }
+
+    .site-nav__icon {
+      fill: currentColor;
+      flex: 0 0 1em;
+      height: 1em;
+      margin-left: 0;
+      margin-right: 0.2em;
+      width: auto;
+    }
+  }
+
+  &__item {
+    display: block;
+    font-family: var(--font-heading);
+    line-height: 1;
+    padding: 1em $grid-gutter-width;
+    position: relative;
+  }
+
+  &__link {
+    @extend %button-reset;
+    @extend %outline-inside;
+
+    font-size: calc(12px + 8vmin);
+    outline-offset: -3px;
+    text-align: left;
+    width: 100%;
+
+    svg {
+      transform: rotate(0deg);
+      transition: 0.5s;
+    }
+
+    &[aria-expanded='true'] {
+      svg { transform: rotate(-180deg); }
+    }
+  }
+
+  &__text {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__options {
+    align-items: center;
+    border-top: solid 1px var(--background-light);
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 0;
+    width: 100%;
+  }
+
+  [aria-controls='site-nav'][aria-expanded='true'] + & {
+    transform: translateY(0);
+    transition: transform 0.5s 0.1s;
+  }
+}
+
+// Medium devices (tablets, 576px and up) ----------------
+@include media-breakpoint-up(sm) {
+  .site-nav {
+    &__link {
+      font-size: 58px;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up) ----------------
+@include media-breakpoint-up(md) {
+  .site-nav {
+    background-color: transparent;
+    height: 100%;
+    left: auto;
+    margin-right: $grid-gutter-width * -0.5;
+    overflow: visible;
+    padding: 0 $grid-gutter-width;
+    position: static;
+    top: auto;
+    transform: none;
+    transition: transform 0.3s;
+    width: auto;
+    z-index: 4;
+
+    &__wrapper {
+      flex-direction: row;
+      height: 100%;
+      justify-content: flex-start;
+      min-height: inherit;
+    }
+
+    &__list {
+      display: flex;
+      position: static;
+
+      svg {
+        height: 7px;
+      }
+
+      .site-nav__icon {
+        margin-right: 0;
+      }
+    }
+
+    .magic-line {
+      background-color: var(--highlight);
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      z-index: 3;
+
+      &.is-ready {
+        opacity: 1;
+        transition: transform $duration, width $duration, height $duration;
+      }
+    }
+
+    &__item {
+      font-family: var(--font-regular);
+      padding: 0;
+      position: static;
+    }
+
+    &__link {
+      display: block;
+      font-size: 16px;
+      height: 100%;
+
+      &:focus { background-color: var(--background-light); }
+    }
+
+    &__text {
+      height: 100%;
+      padding: 0 $grid-gutter-width*0.5;
+    }
+
+    &__name {
+      white-space: nowrap;
+    }
+
+    &__bg {
+      background-color: var(--background-light);
+      cursor: pointer;
+      display: block;
+      height: 100vh;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 100%;
+      transition: opacity 0.3s;
+      width: 100vw;
+      z-index: 0;
+
+      [aria-expanded='true'] ~ & {
+        opacity: 0.95;
+        pointer-events: all;
+      }
+    }
+
+    &__options {
+      border-top: 0;
+      padding: 0;
+      width: auto;
+    }
+
+    &__lang {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      padding: 0 16px;
+      width: auto;
+
+      &__bullet {
+        background-color: var(--color);
+        display: flex;
+        font-size: 1.2rem;
+        height: 25px;
+        width: 25px;
+      }
+
+      &:focus {
+        background-color: var(--background-light);
+        outline: none;
+      }
+    }
+
+    &__socials { display: none; }
+
+    /* Modifiers ---------------------- */
+    .is-scrolling-down & {
+      &__sub {
+        display: none;
+      }
+    }
+  }
+}
+
+// Medium devices (large, 992px and up) ----------------
+@include media-breakpoint-up(lg) {
+  .site-nav {
+    &__list {
+      .site-nav__icon { margin-right: 0.35em; }
+    }
+  }
+}

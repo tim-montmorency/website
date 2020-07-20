@@ -1,11 +1,11 @@
 .main-footer {
-  --grid-color: var(--primary);
+  --grid-color: var(--background);
   --grid-size: 50px;
   --grid-blur: 1px;
 
   align-items: flex-end;
-  background-color: var(--primary);
-  color: var(--secondary);
+  background-color: var(--background);
+  color: var(--color);
   display: flex;
   min-height: 200px;
   overflow: hidden;

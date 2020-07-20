@@ -1,0 +1,28 @@
+<div class="hero{{#
+  #}}{{ if hero_background }} hero--background{{ /if }}">
+  
+  {{ partial:breadcrumb }}
+  
+  <div class="hero__content">
+    {{ partial src="atoms/background" :background="hero_background" }}
+
+    <div class="hero__wrapper">
+      <div class="container">
+        <div class="hero__body">
+          {{ if hero_tagline }}
+            <em class="hero__tagline">{{ hero_tagline }}</em>
+          {{ /if }}
+
+          {{ if hero_title }}
+            <h1 class="hero__title">{{ hero_title }}</h1>
+          {{ /if }}
+
+          {{ if hero_description }}
+            <div class="hero__description">{{ hero_description }}</div>
+          {{ /if }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

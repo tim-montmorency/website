@@ -1,31 +1,23 @@
-<nav class="navbar navbar-redwood">
-    <div class="container-fluid">
+<header class="site-header">
+    <span class="site-header__background"></span>
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-main" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">{{ site_name }}</a>
+    <a href="/" class="site-header__logo">
+        <span class="sr-only">Accueil</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 953.6 303.7" class="tim-logo">
+            <path class="tim
+            -logo__t" d="M785.7 166.8l16.3 16.3 16.3-16.3L930.6 54.5v226.2h-257v-226l112.1 112.1zM650.6.7v303h303V.7h-1.8L802 150.5 652.1.7h-1.5z"/>
+            <path class="tim-logo__i" d="M324.5.5v303h303V.5h-303zm129.9 129.9c-13.1 13.1-13.1 34.3 0 47.4 9.4 9.4 23 12.1 34.8 7.9l94.8 94.8H347.5v-257h257V260l-94.8-94.8c4.1-11.8 1.5-25.4-7.9-34.8-13.1-13.1-34.3-13.1-47.4 0z"/>
+            <path class="tim-logo__m" d="M206.5 0L0 206.5V303h303V0h-96.5zM23 280v-64l85.6-85.6 119.9 119.9 20.5-20.5-119.9-119.9L216 23h64v257H23z"/>
+        </svg>
+    </a>
+
+    {{ partial src="atoms/hamburger" }}
+
+    {{ partial src="atoms/site-nav" }}
+
+    <!-- <form class="navbar-form navbar-right" role="search" action="{{ link to='search' }}">
+        <div class="form-group">
+            <input type="text" class="form-control search" name="q" placeholder="Search">
         </div>
-
-        <div class="collapse navbar-collapse" id="nav-main">
-            <ul class="nav navbar-nav">
-                {{ nav from="/" include_home="true" scope="tag" }}
-                    <li{{ if is_current or is_parent }} class="active"{{ /if }}>
-                        <a href="{{ url }}">{{ tag:nav_title or title }}
-                        </a>
-                    </li>
-                {{ /nav }}
-            </ul>
-            <form class="navbar-form navbar-right" role="search" action="{{ link to='search' }}">
-                <div class="form-group">
-                    <input type="text" class="form-control search" name="q" placeholder="Search">
-                </div>
-            </form>
-        </div>
-
-    </div>
-</nav>
+    </form> -->
+</header>

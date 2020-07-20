@@ -4,6 +4,7 @@ export default class {
   constructor(el) {
     this.dom = {
       el,
+      link: el.querySelector('.youtube__link'),
       frame: el.querySelector('.youtube__frame'),
     };
 
@@ -32,7 +33,7 @@ export default class {
   // -- Methods
   //--------------------------------------------------------------
   get videoId() {
-    const src = this.dom.el.getAttribute('href');
+    const src = this.dom.link.getAttribute('href');
     let result = false;
 
     if (src && typeof src === 'string') {
@@ -92,9 +93,9 @@ export default class {
       playerVars: this.player.settings,
       events: {
         onReady: () => {
-          this.dom.el.addEventListener('click', (e) => this.play(e));
-          this.dom.el.addEventListener('keydown', (e) => this.toggleAction(e));
-          this.dom.el.addEventListener('youtube:stop', () => this.stop());
+          this.dom.link.addEventListener('click', (e) => this.play(e));
+          this.dom.link.addEventListener('keydown', (e) => this.toggleAction(e));
+          this.dom.link.addEventListener('youtube:stop', () => this.stop());
           this.dom.button.disabled = false;
         },
         onStateChange: (e) => this.onPlayerStateChange(e),

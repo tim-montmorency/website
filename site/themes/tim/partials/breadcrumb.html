@@ -1,0 +1,22 @@
+<nav class="breadcrumb" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <div class="container">
+    <ol class="breadcrumb__list">
+      {{ nav:breadcrumbs }}
+      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        {{ if is_current }}
+          <span class="breadcrumb__current" itemprop="item">
+            <span itemprop="name">{{ title }}</span>
+            <meta itemprop="position" content="{{ index }}" />
+          </span>
+        {{ else }}
+          <a class="breadcrumb__link" href="{{ url }}" itemprop="item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="breadcrumb__arrow"><path d="M15 30l2.6-2.6L7.2 16.9H30v-3.8H7.2L17.6 2.6 15 0 0 15l15 15z"></path></svg>
+            <span itemprop="name">{{ title }}</span>
+            <meta itemprop="position" content="{{ index }}" />
+          </a>
+        {{ /if }}
+      </li>
+      {{ /nav:breadcrumbs }}
+    </ol>
+  </div>
+</nav>

@@ -1,15 +1,27 @@
 * { box-sizing: border-box; }
 
 html {
-  background-color: var(--primary);
-  color: var(--secondary);
-  font: 400 #{10px}/#{$line-height} font(primary);
+  background-color: var(--background);
+  color: var(--color);
+  font-size: 10px;
   height: 100%;
+  line-height: $line-height;
 }
 
 body {
+  font-family: var(--font-regular);
   font-size: $font-size;
+  font-weight: 400;
   min-height: 100%;
+}
+
+main {
+  transform: translateY(60px);
+  transition: transform $duration;
+
+  .is-scrolling-down & {
+    transform: translateY(0);
+  }
 }
 
 h1,
@@ -18,34 +30,6 @@ h3,
 h4 {
   margin: $spacer 0;
 }
-
-// h1 {
-//   font-size: 2.4417em; /* 43.95px */
-//   line-height: 1.2287em; /* 54px */
-//   margin-bottom: 0;
-//   margin-top: 0.6143em;
-// }
-
-// h2 {
-//   font-size: 1.9528em; /* 35.15px */
-//   line-height: 1.5363em; /* 54px */
-//   margin-bottom: 0;
-//   margin-top: 0.7681em;
-// }
-
-// h3 {
-//   font-size: 1.5628em; /* 28.13px */
-//   line-height: 1.9197em; /* 54px */
-//   margin-bottom: 0;
-//   margin-top: 0.9598em;
-// }
-
-// h4 {
-//   font-size: 1.25em; /* 22.5px */
-//   line-height: 1.2em; /* 27px */
-//   margin-bottom: 0;
-//   margin-top: 1.2em;
-// }
 
 a {
   color: inherit;
@@ -59,11 +43,6 @@ img {
 textarea {
   resize: vertical;
   width: 100%;
-}
-
-.section {
-  background-color: var(--primary);
-  color: var(--secondary);
 }
 
 .container,

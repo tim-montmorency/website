@@ -1,0 +1,29 @@
+{{ if background }}
+  {{ assets:background }}
+    <{{ if is_video }}div{{ else }}picture{{ /if }} class="background background--media{{#
+      #}} background--{{ if is_video  }}video{{ else }}picture{{ /if }}">
+  {{ /assets:background }}
+{{ else }}
+  <div class="background">
+{{ /if }}
+  
+  {{ assets:background }}
+    {{ if is_video  }}
+    {{ else }}
+      <img class="background__image"{{# 
+        #}} src="{{ url }}"{{#
+        #}} alt="{{ title }}"{{#
+        #}} loading="lazy"{{#
+        #}} width="{{ width }}"{{#
+        #}} height="{{ height }}"{{#
+        #}} style="object-position: {{ focus_css }}">
+    {{ /if }}
+  {{ /assets:background }}
+
+{{ if background }}
+  {{ assets:background }}
+    </{{ if is_video  }}div{{ else }}picture{{ /if }}>
+  {{ /assets:background }}
+{{ else }}
+  </div>
+{{ /if }}

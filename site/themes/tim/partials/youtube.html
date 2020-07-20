@@ -3,16 +3,23 @@
   <section class="section section--{{ type }} theme-{{ section_theme or 'default' }}">
     <div class="container">
   {{ /if }}
-    <{{ if caption }}figure{{ else }}div{{ /if }} class="youtube__wrapper">
-      <a class="youtube{{ if filter != 'none' }} youtube--filter-{{ filter }}{{ /if }}" data-module="Youtube" href="{{ url | embed_url }}" tabindex="0">
+    <{{ if caption }}figure{{ else }}div{{ /if }} 
+      data-module="Youtube"
+      class="media youtube{{#
+        #}} media--landscape{{#
+        #}} media--{{ youtube_style or 'normal' }}{{#
+        #}}{{ if label }} media--has-label{{ /if }}{{#
+        #}}{{ if filter != 'none' }} media--filter-{{ filter }}{{ /if }}">
+
+      <a class="youtube__link" href="{{ url | embed_url }}" tabindex="0">
         {{ partial:media-label }}
-        <div class="youtube__frame">
-          <img class="youtube__poster" src="{{ poster or url | YoutubePoster }}" alt="">
+        <div class="media__wrapper youtube__frame">
+          <img class="media__el youtube__poster" src="{{ poster or url | YoutubePoster }}" alt="">
         </div>
       </a>
   
       {{ if caption }}
-        <figcaption class="youtube__caption">{{ caption }}</figcaption>
+        <figcaption class="media__caption">{{ caption }}</figcaption>
       {{ /if }}
     </{{ if caption }}figure{{ else }}div{{ /if }}>
     

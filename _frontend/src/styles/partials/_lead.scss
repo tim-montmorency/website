@@ -1,0 +1,41 @@
+.lead {
+  &__intro,
+  &__text {
+    padding: 0 $grid-gutter-width*0.5;
+  }
+
+  &__intro {
+    font-family: var(--font-heading);
+    font-size: 21px;
+    font-weight: bold;
+
+    > * {
+      @extend %remove-ends-vertical-margin;
+    }
+  }
+
+  &__text {
+    padding-top: 20px;
+
+    > * {
+      @extend %remove-ends-vertical-margin;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .lead {
+    &__intro {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+    }
+
+    &__text {
+      column-count: 2;
+      column-gap: $grid-gutter-width;
+      flex: 0 0 66.666%;
+      max-width: 66.666%;
+      padding-top: 0;
+    }
+  }
+}

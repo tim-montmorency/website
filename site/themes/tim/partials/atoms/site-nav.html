@@ -1,0 +1,15 @@
+<nav id="site-nav" class="site-nav">
+  <div class="site-nav__wrapper">  
+    <ul class="site-nav__list" role="menubar" data-module="MagicLine">
+      {{ nav from="/" include_home="false" scope="tag" }}
+        <li class="site-nav__item" role="none">
+          <a href="{{ url }}" role="menuitem" class="site-nav__link{{ if is_current or is_parent }} is-active{{ /if }}">
+            <span class="site-nav__text">
+              <span class="site-nav__name">{{ title }}</span>
+            </span>
+          </a>
+        </li>
+      {{ /nav }}
+    </ul>
+  </div>
+</nav>

@@ -1,6 +1,9 @@
 .section {
+  background-color: var(--background);
+  color: var(--color);
   padding-bottom: var(--section-spacer);
   padding-top: var(--section-spacer);
+  position: relative;
 
   &--no-padding {
     padding-bottom: 0;

@@ -25,6 +25,67 @@ sections:
         folder: /
         restrict_assets: true
         sets:
+          picture:
+            display: Picture
+            fields:
+              picture:
+                fieldset: partial_picture
+                type: partial
+                display: Picture
+          youtube:
+            display: Youtube
+            fields:
+              youtube:
+                fieldset: partial_youtube
+                type: partial
+                display: Youtube
+          quote:
+            display: Quote
+            fields:
+              quote:
+                fieldset: partial_quote
+                type: partial
+                display: Quote
+              alignment:
+                options:
+                  left: Left
+                  centered: Centered
+                inline: true
+                type: radio
+                width: 33
+                display: Alignment
+                default: centered
+                instructions: 'Use _Left_ only if there is a block of text before'
+          faq:
+            display: FAQ
+            fields:
+              faq:
+                fieldset: partial_faq
+                type: partial
+                display: FAQ
+              section_theme:
+                options:
+                  default: Default
+                  reversed: Reversed
+                  highlight: Highlight
+                type: select
+                width: 33
+                display: 'Section theme'
+                default: default
+          split:
+            display: Split
+            fields:
+              split:
+                fieldset: partial_split
+                type: partial
+                display: Split
+          lead:
+            display: Lead
+            fields:
+              lead:
+                fieldset: partial_lead_text
+                type: partial
+                display: Lead
           note:
             display: Note
             fields:
@@ -55,60 +116,6 @@ sections:
                 restrict_assets: false
                 type: bard
                 display: Text
-          faq:
-            display: FAQ
-            fields:
-              faq:
-                fieldset: partial_faq
-                type: partial
-                display: FAQ
-              section_theme:
-                options:
-                  default: Default
-                  reversed: Reversed
-                  highlight: Highlight
-                type: select
-                width: 33
-                display: 'Section theme'
-                default: default
-          quote:
-            display: Quote
-            fields:
-              quote:
-                fieldset: partial_quote
-                type: partial
-                display: Quote
-              alignment:
-                options:
-                  left: Left
-                  centered: Centered
-                inline: true
-                type: radio
-                width: 33
-                display: Alignment
-                default: centered
-                instructions: 'Use _Left_ only if there is a block of text before'
-          youtube:
-            display: Youtube
-            fields:
-              youtube:
-                fieldset: partial_youtube
-                type: partial
-                display: Youtube
-          picture:
-            display: Picture
-            fields:
-              picture:
-                fieldset: partial_picture
-                type: partial
-                display: Picture
-          split:
-            display: Split
-            fields:
-              split:
-                fieldset: partial_split
-                type: partial
-                display: Split
         type: bard
         display: Body
 taxonomies: false

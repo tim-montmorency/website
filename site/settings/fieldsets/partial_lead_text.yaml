@@ -1,0 +1,49 @@
+sections:
+  main:
+    display: Main
+    fields:
+      lead:
+        buttons:
+          - h2
+          - h3
+          - italic
+          - unorderedlist
+          - orderedlist
+          - removeformat
+          - anchor
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: true
+        link_noreferrer: true
+        target_blank: true
+        semantic_elements: true
+        restrict_assets: false
+        type: bard
+        width: 50
+        display: Lead
+      text:
+        buttons:
+          - bold
+          - italic
+          - unorderedlist
+          - orderedlist
+          - removeformat
+          - quote
+          - anchor
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: true
+        link_noreferrer: true
+        target_blank: true
+        semantic_elements: true
+        restrict_assets: false
+        type: bard
+        width: 50
+        display: Text
+taxonomies: false
+hide: true
+title: 'Partial - Lead'

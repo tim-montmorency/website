@@ -42,7 +42,7 @@
 
     cursor: pointer;
     display: block;
-    font-family: font(secondary);
+    font-family: var(--font-heading);
     font-size: 18px;
     line-height: 1.2;
     padding: $spacer*0.5 1em $spacer*0.5 0;
@@ -95,8 +95,8 @@
   .faq {
     &__item {
       &::after {
-        width: 100%;
         left: 0;
+        width: 100%;
       }
     }
   }
