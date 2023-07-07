@@ -79,7 +79,7 @@
     "sass-extract": "^2.1.0",
     "sass-loader": "^8.0.2",
     "string-replace-loader": "^2.3.0",
-    "stylelint": "^13.6.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-sass-guidelines": "^7.0.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-webpack-plugin": "^2.0.0",
